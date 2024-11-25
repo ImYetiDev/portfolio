@@ -1,0 +1,30 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+const EXPERIENCE = [
+  {
+    date: "2024 - Present",
+    title: "Frontend Developer (Personal Project)",
+    company: "Bike Rental Application",
+    description:
+      "Developed a bike rental application featuring role-based access control, integration with Google Maps API for real-time bike location tracking, and a MySQL database to manage user and bike data.",
+    link: "https://github.com/ImYetiDev/RideNow-Bootcamp-IBM",
+  },
+  {
+    date: "2024",
+    title: "Frontend Developer Trainee",
+    company: "Globant (Internal Project)",
+    description:
+      "Collaborated in the development of an internal event management platform at Globant. The platform enables event managers to efficiently organize events and visualize key metrics. Utilized **React** to build an interactive, user-friendly interface.",
+  },
+]
+---
+
+<ol class="relative mt-16">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>
