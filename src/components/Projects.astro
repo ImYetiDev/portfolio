@@ -11,10 +11,10 @@ const TAGS = {
     class: "bg-blue-500 text-white",
     icon: NextJS, // Cambié a NextJS para usar un icono como ejemplo, pero usa el que corresponda a React.
   },
-  MYSQL: {
-    name: "MySQL",
+  TAILWIND: {
+    name: "Tailwind CSS",
     class: "bg-[#f29f5f] text-white",
-    icon: Tailwind, // Cambié a Tailwind como placeholder. Cambia al icono de base de datos si tienes uno.
+    icon: Tailwind,
   },
   GOOGLE_API: {
     name: "Google API",
@@ -28,28 +28,28 @@ const PROJECTS = [
     title: "Netflix Clone",
     description:
       "A Netflix clone built with Astro, Tailwind CSS, and TypeScript. Features a responsive design and dynamic content loading to mimic the Netflix experience.",
-    link: "https://netflux-clon.netlify.app/", // Cambia por el enlace del proyecto si está en línea.
-    github: "https://github.com/ImYetiDev/clon-netflix", // Cambia por el enlace de GitHub si está disponible.
-    image: "/netflix.png", // Cambia esta ruta a la imagen
-    tags: [TAGS.REACT],
+    link: "https://netflux-clon.netlify.app/",
+    github: "https://github.com/ImYetiDev/clon-netflix",
+    image: "/netflix.png",
+    tags: [TAGS.REACT, TAGS.TAILWIND],
   },
   {
     title: "Globant People Events Platform",
     description:
       "An internal platform for Globant to manage events and display metrics more efficiently. Built with React for dynamic user interaction.",
-    link: "https://people-events-platform.web.app/", // Cambia por el enlace del proyecto si está disponible.
-    github: "", // Cambia por el enlace de GitHub si está disponible.
-    image: "/pep.png", // Cambia esta ruta a la imagen del proyecto.
-    tags: [TAGS.REACT],
+    link: "https://people-events-platform.web.app/",
+    github: "",
+    image: "/pep.png",
+    tags: [TAGS.REACT, TAGS.TAILWIND],
   },
   {
     title: "Bike Rental Application",
     description:
       "A bike rental platform with role management, MySQL database integration, and real-time bike location tracking using Google Maps API. Developed during the Senasoft 2024 event.",
-    link: "https://github.com/ImYetiDev/RideNow-Bootcamp-IBM", // Cambia por el enlace del proyecto si está en línea.
-    github: "https://github.com/ImYetiDev/RideNow-Bootcamp-IBM", // Cambia por el enlace de GitHub si está disponible.
-    image: "/", // Cambia esta ruta a la imagen que prefieras.
-    tags: [TAGS.REACT, TAGS.MYSQL, TAGS.GOOGLE_API],
+    link: "https://github.com/ImYetiDev/RideNow-Bootcamp-IBM", 
+    github: "https://github.com/ImYetiDev/RideNow-Bootcamp-IBM", 
+    image: "/", 
+    tags: [TAGS.REACT, TAGS.GOOGLE_API],
   },
 ];
 ---
