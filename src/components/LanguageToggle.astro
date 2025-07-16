@@ -1,0 +1,18 @@
+---
+---
+
+<button id="lang-toggle" class="ml-4 text-xs underline">
+  Cambiar idioma
+</button>
+
+<script is:inline>
+  const toggle = document.getElementById("lang-toggle")
+  toggle.addEventListener("click", () => {
+    const currentLang = document.cookie.includes("lang=es") ? "es" : "en"
+    const newLang = currentLang === "es" ? "en" : "es"
+    document.cookie = `lang=${newLang}; path=/; max-age=31536000`
+    window.location.href = window.location.pathname // navegación completa (no SPA)
+
+    console.log(`Language changed to ${newLang}`)
+  })
+</script>

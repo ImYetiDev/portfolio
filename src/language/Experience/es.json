@@ -1,0 +1,41 @@
+{
+  "nav": {
+    "experience": "Experiencia",
+    "projects": "Proyectos",
+    "about": "Sobre mí",
+    "contact": "Contacto"
+  },
+  "experience": [
+    {
+      "date": "2024",
+      "title": "Plataforma de Eventos Interna",
+      "company": "Globant (Proyecto Interno)",
+      "description": "Colaboré en el desarrollo de una plataforma interna de gestión de eventos..."
+    },
+    {
+      "date": "2024",
+      "title": "Clon de Netflix (Proyecto Personal)",
+      "company": "ImYetiDev",
+      "description": "Creé un clon de Netflix usando Astro, Tailwind CSS...",
+      "link": "https://netflux-clon.netlify.app/"
+    },
+    {
+      "date": "2024 - Presente",
+      "title": "Desarrollador Frontend (Proyecto Personal)",
+      "company": "Ride Now",
+      "description": "Desarrollé una aplicación de alquiler de bicicletas...",
+      "link": "https://github.com/ImYetiDev/RideNow-Bootcamp-IBM"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Generador de Imágenes AI",
+      "description": "Hecho con OpenAI y Astro...",
+      "link": "https://..."
+    }
+  ],
+  "about": {
+    "title": "Hola, soy Yeti",
+    "description": "Desarrollador frontend enfocado en crear interfaces increíbles."
+  }
+}

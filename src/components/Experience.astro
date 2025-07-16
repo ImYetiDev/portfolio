@@ -1,7 +1,13 @@
 ---
 import { date } from "astro/zod"
 import ExperienceItem from "./ExperienceItem.astro"
-const EXPERIENCE = [
+
+import en from "../language/Experience/en.json"
+import es from "../language/Experience/es.json"
+
+const lang = Astro.cookies.get("lang")?.value || "en"
+const EXPERIENCE = lang === "en" ? es.experience : en.experience
+/* const EXPERIENCE = [
   
   {
     date: "2024",
@@ -26,7 +32,7 @@ const EXPERIENCE = [
       "Developed a bike rental application featuring role-based access control, integration with Google Maps API for real-time bike location tracking, and a MySQL database to manage user and bike data.",
     link: "https://github.com/ImYetiDev/RideNow-Bootcamp-IBM",
   },
-]
+] */
 ---
 
 <ol class="relative mt-16">
