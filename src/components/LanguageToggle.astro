@@ -1,18 +1,22 @@
 ---
+const lang = Astro.cookies.get("lang")?.value || "en"
+const nextLang = lang === "es" ? "en" : "es"
+const flagSrc = nextLang === "en" ? "/icons/flags/usa.svg" : "/icons/flags/colombia.svg"
+const alt = nextLang === "en" ? "Switch to English" : "Cambiar a Español"
 ---
 
-<button id="lang-toggle" class="ml-4 text-xs underline">
-  Cambiar idioma
+<button id="lang-toggle" title={alt} class="ml-4">
+  <div class="flag-circle w-6 h-6 rounded-full overflow-hidden border border-gray-400 dark:border-gray-200">
+    <img src={flagSrc} alt={alt} class="w-full h-full object-cover" loading="lazy" />
+  </div>
 </button>
 
 <script is:inline>
   const toggle = document.getElementById("lang-toggle")
-  toggle.addEventListener("click", () => {
+  toggle?.addEventListener("click", () => {
     const currentLang = document.cookie.includes("lang=es") ? "es" : "en"
-    const newLang = currentLang === "es" ? "en" : "es"
-    document.cookie = `lang=${newLang}; path=/; max-age=31536000`
-    window.location.href = window.location.pathname // navegación completa (no SPA)
-
-    console.log(`Language changed to ${newLang}`)
+    const nextLang = currentLang === "es" ? "en" : "es"
+    document.cookie = `lang=${nextLang}; path=/; max-age=31536000`
+    window.location.href = window.location.pathname
   })
 </script>

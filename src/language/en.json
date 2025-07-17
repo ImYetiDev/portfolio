@@ -1,0 +1,68 @@
+{
+  "nav": {
+    "experience": "Experience",
+    "projects": "Projects",
+    "about": "About me",
+    "contact": "Contact"
+  },
+  "HERO": {
+    "title": "Hi, I'm Yeti",
+    "company": "ImYetiDev",
+    "description": "Frontend Developer with hands-on experience building responsive, user-focused applications using React, TypeScript, and modern web tools. I’ve contributed to real-world projects using cloud platforms like GCP and AWS, and I enjoy turning complex ideas into clean, scalable interfaces. Currently working on personal and open-source projects while looking for opportunities to grow and collaborate with passionate teams."
+  },
+  "EXPERIENCE": [
+    {
+      "date": "2024",
+      "title": "People Events Platform (Intern Project)",
+      "company": "Globant (Internal Project)",
+      "description": "Collaborated in the development of an internal event management platform at Globant. The platform enables event managers to efficiently organize events and visualize key metrics. Utilized React to build an interactive, user-friendly interface."
+    },
+    {
+      "date": "2024",
+      "title": "Netflix Clone (Personal Project)",
+      "company": "ImYetiDev",
+      "description": "Created a netflix clone using Astro, Tailwind CSS, and TypeScript. The project features a responsive design, dynamic content loading, and a user-friendly interface that mimics the Netflix experience.",
+      "link": "https://netflux-clon.netlify.app/"
+    },
+    {
+      "date": "2024 - Present",
+      "title": "Frontend Developer (Personal Project)",
+      "company": "Ride Now",
+      "description": "Developed a bike rental application featuring role-based access control, integration with Google Maps API for real-time bike location tracking, and a MySQL database to manage user and bike data.",
+      "link": "https://github.com/ImYetiDev/RideNow-Bootcamp-IBM"
+    }
+  ],
+   "PROJECTS" = [
+    {
+    "title": "Netflix Clone",
+    "description": "A Netflix clone built with Astro, Tailwind CSS, and TypeScript. Features a responsive design and dynamic content loading to mimic the Netflix experience.",
+    "link": "https://netflux-clon.netlify.app/",
+    "github": "https://github.com/ImYetiDev/clon-netflix",
+    "image": "/netflix.png",
+    "tags": [TAGS.REACT, TAGS.TAILWIND
+      ],
+    },
+    {
+    "title": "Globant People Events Platform",
+    "description": "An internal platform for Globant to manage events and display metrics more efficiently. Built with React for dynamic user interaction.",
+    "link": "https://people-events-platform.web.app/",
+    "github": "",
+    "image": "/pep.png",
+    "tags": [TAGS.REACT, TAGS.TAILWIND
+      ],
+    },
+    {
+    "title": "Bike Rental Application",
+    "description": "A bike rental platform with role management, MySQL database integration, and real-time bike location tracking using Google Maps API. Developed during the Senasoft 2024 event.",
+    "link": "https://github.com/ImYetiDev/RideNow-Bootcamp-IBM", 
+    "github": "https://github.com/ImYetiDev/RideNow-Bootcamp-IBM", 
+    "image": "/", 
+    "tags": [TAGS.REACT, TAGS.GOOGLE_API
+      ],
+    },
+  ];,
+  "about": {
+    "title": "Hi, I'm Yeti",
+    "description": "Frontend developer focused on building amazing UIs."
+  }
+}

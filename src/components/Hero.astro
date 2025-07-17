@@ -5,6 +5,16 @@ import LinkedInIcon from "@/components/icons/LinkedIn.astro"
 import MailIcon from "@/components/icons/Mail.astro"
 import SocialPill from "@/components/SocialPill.astro"
 
+interface Props {
+  title: string
+  about: string
+}
+
+import en from "../language/en.json"
+import es from "../language/es.json"
+
+const lang = Astro.cookies.get("lang")?.value || "en"
+const info = lang === "es" ? en.HERO : "es.HERO"
 ---
 
 <div class="max-w-xl">
@@ -26,12 +36,12 @@ import SocialPill from "@/components/SocialPill.astro"
   <h1
     class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
   >
-    Hi, I'm David Uribe
+    { info.title}
   </h1>
   <p
     class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
   >
-    Frontend Developer with hands-on experience building responsive, user-focused applications using React, TypeScript, and modern web tools. I’ve contributed to real-world projects using cloud platforms like GCP and AWS, and I enjoy turning complex ideas into clean, scalable interfaces. Currently working on personal and open-source projects while looking for opportunities to grow and collaborate with passionate teams.
+    { info.description }
   </p>
   <nav class="flex flex-wrap gap-4 mt-8">
     <SocialPill href="mailto:imyeti479@gmail.com">  <!-- Asegúrate de poner tu email -->

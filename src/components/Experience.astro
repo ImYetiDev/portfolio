@@ -2,37 +2,12 @@
 import { date } from "astro/zod"
 import ExperienceItem from "./ExperienceItem.astro"
 
-import en from "../language/Experience/en.json"
-import es from "../language/Experience/es.json"
+import en from "../language/en.json"
+import es from "../language/es.json"
 
 const lang = Astro.cookies.get("lang")?.value || "en"
-const EXPERIENCE = lang === "en" ? es.experience : en.experience
-/* const EXPERIENCE = [
-  
-  {
-    date: "2024",
-    title: "People Events Platform (Intern Project)",
-    company: "Globant (Internal Project)",
-    description:
-      "Collaborated in the development of an internal event management platform at Globant. The platform enables event managers to efficiently organize events and visualize key metrics. Utilized React to build an interactive, user-friendly interface.",
-  },
-  {
-    date: "2024",
-    title: "Netflix Clone (Personal Project)",
-    company: "ImYetiDev",
-    description:
-      "Created a netflix clone using Astro, Tailwind CSS, and TypeScript. The project features a responsive design, dynamic content loading, and a user-friendly interface that mimics the Netflix experience.",
-    link: "https://netflux-clon.netlify.app/",
-  },
-  {
-    date: "2024 - Present",
-    title: "Frontend Developer (Personal Project)",
-    company: "Ride Now",
-    description:
-      "Developed a bike rental application featuring role-based access control, integration with Google Maps API for real-time bike location tracking, and a MySQL database to manage user and bike data.",
-    link: "https://github.com/ImYetiDev/RideNow-Bootcamp-IBM",
-  },
-] */
+const EXPERIENCE = lang === "en" ? es.experience : en.EXPERIENCE
+
 ---
 
 <ol class="relative mt-16">
