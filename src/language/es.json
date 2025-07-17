@@ -1,10 +1,26 @@
 {
-  "nav": {
-    "experience": "Experiencia",
-    "projects": "Proyectos",
-    "about": "Acerca de mí",
-    "contact": "Contacto"
-  },
+  "NAV": [
+    {
+      "title": "Proyectos",
+      "label": "proyectos",
+      "url": "/#proyectos"
+    },
+    {
+      "title": "Experiencia",
+      "label": "experiencia",
+      "url": "/#experiencia"
+    },
+    {
+      "title": "Sobre mí",
+      "label": "sobre-mi",
+      "url": "/#sobre-mi"
+    },
+    {
+      "title": "Contacto",
+      "label": "contacto",
+      "url": "mailto:imyeti479@gmail.com"
+    }
+  ],
   "HERO": {
     "title": "Hola, soy Yeti",
     "company": "ImYetiDev",

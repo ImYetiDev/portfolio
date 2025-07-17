@@ -1,10 +1,26 @@
 {
-  "nav": {
-    "experience": "Experience",
-    "projects": "Projects",
-    "about": "About me",
-    "contact": "Contact"
-  },
+  "NAV": [
+    {
+      "title": "Projects",
+      "label": "proyectos",
+      "url": "/#proyectos"
+    },
+    {
+      "title": "Experience",
+      "label": "experiencia",
+      "url": "/#experiencia"
+    },
+    {
+      "title": "About me",
+      "label": "sobre-mi",
+      "url": "/#sobre-mi"
+    },
+    {
+      "title": "Contact",
+      "label": "contacto",
+      "url": "mailto:imyeti479@gmail.com"
+    }
+  ],
   "HERO": {
     "title": "Hi, I'm Yeti",
     "company": "ImYetiDev",
@@ -32,31 +48,38 @@
       "link": "https://github.com/ImYetiDev/RideNow-Bootcamp-IBM"
     }
   ],
-   "PROJECTS": [
+  "PROJECTS": [
     {
-    "title": "Netflix Clone",
-    "description": "A Netflix clone built with Astro, Tailwind CSS, and TypeScript. Features a responsive design and dynamic content loading to mimic the Netflix experience.",
-    "link": "https://netflux-clon.netlify.app/",
-    "github": "https://github.com/ImYetiDev/clon-netflix",
-    "image": "/netflix.png",
-    "tags": ["REACT", "TAILWIND"]
-    },
-    {
-    "title": "Globant People Events Platform",
-    "description": "An internal platform for Globant to manage events and display metrics more efficiently. Built with React for dynamic user interaction.",
-    "link": "https://people-events-platform.web.app/",
-    "github": "",
-    "image": "/pep.png",
-    "tags": ["REACT", "TAILWIND"
+      "title": "Netflix Clone",
+      "description": "A Netflix clone built with Astro, Tailwind CSS, and TypeScript. Features a responsive design and dynamic content loading to mimic the Netflix experience.",
+      "link": "https://netflux-clon.netlify.app/",
+      "github": "https://github.com/ImYetiDev/clon-netflix",
+      "image": "/netflix.png",
+      "tags": [
+        "REACT",
+        "TAILWIND"
       ]
     },
     {
-    "title": "Bike Rental Application",
-    "description": "A bike rental platform with role management, MySQL database integration, and real-time bike location tracking using Google Maps API. Developed during the Senasoft 2024 event.",
-    "link": "https://github.com/ImYetiDev/RideNow-Bootcamp-IBM", 
-    "github": "https://github.com/ImYetiDev/RideNow-Bootcamp-IBM", 
-    "image": "/", 
-    "tags": ["REACT", "GOOGLE_API"
+      "title": "Globant People Events Platform",
+      "description": "An internal platform for Globant to manage events and display metrics more efficiently. Built with React for dynamic user interaction.",
+      "link": "https://people-events-platform.web.app/",
+      "github": "",
+      "image": "/pep.png",
+      "tags": [
+        "REACT",
+        "TAILWIND"
+      ]
+    },
+    {
+      "title": "Bike Rental Application",
+      "description": "A bike rental platform with role management, MySQL database integration, and real-time bike location tracking using Google Maps API. Developed during the Senasoft 2024 event.",
+      "link": "https://github.com/ImYetiDev/RideNow-Bootcamp-IBM",
+      "github": "https://github.com/ImYetiDev/RideNow-Bootcamp-IBM",
+      "image": "/",
+      "tags": [
+        "REACT",
+        "GOOGLE_API"
       ]
     }
   ],
