@@ -10,6 +10,12 @@ import Projects from "@/components/Projects.astro"
 import SectionContainer from "@/components/SectionContainer.astro"
 import Hero from "@/components/Hero.astro"
 import TitleSection from "@/components/TitleSection.astro"
+
+import en from "../language/en.json"
+import es from "../language/es.json"
+
+const lang = Astro.cookies.get("lang")?.value || "en"
+const index = lang === "es" ? en.INDEX : es.INDEX
 ---
 
 <Layout
@@ -26,7 +32,7 @@ import TitleSection from "@/components/TitleSection.astro"
     <SectionContainer id="proyectos">
       <TitleSection>
         <CodeIcon class="size-7" />
-        Projects
+        {index.section1}
       </TitleSection>
       <Projects />
     </SectionContainer>
@@ -34,7 +40,7 @@ import TitleSection from "@/components/TitleSection.astro"
     <SectionContainer id="experiencia">
       <TitleSection>
         <Briefcase class="size-8" />
-        Projects Experience
+        {index.section2}
       </TitleSection>
       <Experience />
     </SectionContainer>
@@ -42,7 +48,7 @@ import TitleSection from "@/components/TitleSection.astro"
     <SectionContainer id="sobre-mi">
       <TitleSection>
         <ProfileCheck class="size-8" />
-        About me
+        {index.section3}
       </TitleSection>
       <AboutMe />
     </SectionContainer>

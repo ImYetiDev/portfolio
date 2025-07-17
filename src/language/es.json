@@ -1,4 +1,9 @@
 {
+  "INDEX": {
+    "section1": "Proyectos",
+    "section2": "Experiencia",
+    "section3": "Sobre mí"
+  },
   "NAV": [
     {
       "title": "Proyectos",
