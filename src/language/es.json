@@ -2,40 +2,65 @@
   "nav": {
     "experience": "Experiencia",
     "projects": "Proyectos",
-    "about": "Sobre mí",
+    "about": "Acerca de mí",
     "contact": "Contacto"
   },
-  "experience": [
+  "HERO": {
+    "title": "Hola, soy Yeti",
+    "company": "ImYetiDev",
+    "description": "Desarrollador Frontend con experiencia práctica en la creación de aplicaciones responsivas y centradas en el usuario, utilizando React, TypeScript y herramientas web modernas. He contribuido en proyectos reales usando plataformas en la nube como GCP y AWS, y disfruto transformar ideas complejas en interfaces limpias y escalables. Actualmente trabajo en proyectos personales y de código abierto mientras busco oportunidades para crecer y colaborar con equipos apasionados."
+  },
+  "EXPERIENCE": [
     {
       "date": "2024",
-      "title": "Plataforma de Eventos Interna",
+      "title": "Plataforma de Eventos para Personas (Proyecto Interno)",
       "company": "Globant (Proyecto Interno)",
-      "description": "Colaboré en el desarrollo de una plataforma interna de gestión de eventos..."
+      "description": "Colaboré en el desarrollo de una plataforma interna de gestión de eventos en Globant. La plataforma permite a los organizadores de eventos gestionar eficientemente los eventos y visualizar métricas clave. Se utilizó React para construir una interfaz interactiva y fácil de usar."
     },
     {
       "date": "2024",
       "title": "Clon de Netflix (Proyecto Personal)",
       "company": "ImYetiDev",
-      "description": "Creé un clon de Netflix usando Astro, Tailwind CSS...",
+      "description": "Creé un clon de Netflix utilizando Astro, Tailwind CSS y TypeScript. El proyecto cuenta con un diseño responsivo, carga dinámica de contenido y una interfaz de usuario amigable que imita la experiencia de Netflix.",
       "link": "https://netflux-clon.netlify.app/"
     },
     {
-      "date": "2024 - Presente",
+      "date": "2024 - Actualidad",
       "title": "Desarrollador Frontend (Proyecto Personal)",
       "company": "Ride Now",
-      "description": "Desarrollé una aplicación de alquiler de bicicletas...",
+      "description": "Desarrollé una aplicación de alquiler de bicicletas que incluye control de acceso basado en roles, integración con la API de Google Maps para el seguimiento en tiempo real de la ubicación de las bicicletas y una base de datos MySQL para gestionar los datos de usuarios y bicicletas.",
       "link": "https://github.com/ImYetiDev/RideNow-Bootcamp-IBM"
     }
   ],
-  "projects": [
+  "PROJECTS": [
     {
-      "title": "Generador de Imágenes AI",
-      "description": "Hecho con OpenAI y Astro...",
-      "link": "https://..."
+      "title": "Clon de Netflix",
+      "description": "Un clon de Netflix construido con Astro, Tailwind CSS y TypeScript. Cuenta con un diseño responsivo y carga dinámica de contenido para imitar la experiencia de Netflix.",
+      "link": "https://netflux-clon.netlify.app/",
+      "github": "https://github.com/ImYetiDev/clon-netflix",
+      "image": "/netflix.png",
+      "tags": ["REACT", "TAILWIND"]
+    },
+    {
+      "title": "Plataforma de Eventos para Personas de Globant",
+      "description": "Una plataforma interna de Globant para gestionar eventos y visualizar métricas de manera más eficiente. Construida con React para una interacción dinámica con el usuario.",
+      "link": "https://people-events-platform.web.app/",
+      "github": "",
+      "image": "/pep.png",
+      "tags": ["REACT", "TAILWIND"]
+    },
+    {
+      "title": "Aplicación de Alquiler de Bicicletas",
+      "description": "Una plataforma de alquiler de bicicletas con gestión de roles, integración con una base de datos MySQL y seguimiento en tiempo real de la ubicación de las bicicletas utilizando la API de Google Maps. Desarrollada durante el evento Senasoft 2024.",
+      "link": "https://github.com/ImYetiDev/RideNow-Bootcamp-IBM",
+      "github": "https://github.com/ImYetiDev/RideNow-Bootcamp-IBM",
+      "image": "/",
+      "tags": ["REACT", "GOOGLE_API"]
     }
   ],
-  "about": {
-    "title": "Hola, soy Yeti",
-    "description": "Desarrollador frontend enfocado en crear interfaces increíbles."
+  "ABOUT": {
+    "p1": "Soy un desarrollador frontend con experiencia sólida en la creación de interfaces modernas utilizando React, TypeScript y herramientas de diseño como Figma. Me destaco por mi capacidad de aprendizaje rápido y adaptación a nuevas tecnologías, lo cual se refleja en mi trabajo exitoso con servicios en la nube como GCP y AWS, sin tener experiencia previa en esos campos.",
+    "p2": "He contribuido al desarrollo de plataformas a gran escala junto a equipos multidisciplinarios, utilizando metodologías ágiles y siempre priorizando la experiencia del usuario y la calidad del código. Aunque mi enfoque principal es el frontend, también he asumido tareas de backend, como la creación de APIs con Node.js, demostrando mi versatilidad y compromiso con los objetivos del producto.",
+    "p3": "Estoy en constante aprendizaje y trabajando en proyectos personales, explorando tecnologías como Astro, Firebase y Tailwind CSS. Mi objetivo es seguir creciendo como desarrollador, creando productos digitales funcionales, escalables y centrados en el usuario."
   }
 }

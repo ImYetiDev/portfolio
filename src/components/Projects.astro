@@ -5,11 +5,18 @@ import Tailwind from "./icons/Tailwind.astro";
 import Link from "./icons/Link.astro";
 import LinkButton from "./LinkButton.astro";
 
+import en from "../language/en.json"
+import es from "../language/es.json"
+
+const lang = Astro.cookies.get("lang")?.value || "en"
+const t = lang === "es" ? en.PROJECTS : es.PROJECTS
+
+// Iconos y estilos no se traducen, así que se mantienen aquí
 const TAGS = {
   REACT: {
     name: "React",
     class: "bg-blue-500 text-white",
-    icon: NextJS, // Cambié a NextJS para usar un icono como ejemplo, pero usa el que corresponda a React.
+    icon: NextJS,
   },
   TAILWIND: {
     name: "Tailwind CSS",
@@ -19,39 +26,16 @@ const TAGS = {
   GOOGLE_API: {
     name: "Google API",
     class: "bg-[#4285F4] text-white",
-    icon: Tailwind, // Cambié al icono de Tailwind, pero puedes reemplazarlo con el icono adecuado.
+    icon: Tailwind,
   },
 };
 
-const PROJECTS = [
-  {
-    title: "Netflix Clone",
-    description:
-      "A Netflix clone built with Astro, Tailwind CSS, and TypeScript. Features a responsive design and dynamic content loading to mimic the Netflix experience.",
-    link: "https://netflux-clon.netlify.app/",
-    github: "https://github.com/ImYetiDev/clon-netflix",
-    image: "/netflix.png",
-    tags: [TAGS.REACT, TAGS.TAILWIND],
-  },
-  {
-    title: "Globant People Events Platform",
-    description:
-      "An internal platform for Globant to manage events and display metrics more efficiently. Built with React for dynamic user interaction.",
-    link: "https://people-events-platform.web.app/",
-    github: "",
-    image: "/pep.png",
-    tags: [TAGS.REACT, TAGS.TAILWIND],
-  },
-  {
-    title: "Bike Rental Application",
-    description:
-      "A bike rental platform with role management, MySQL database integration, and real-time bike location tracking using Google Maps API. Developed during the Senasoft 2024 event.",
-    link: "https://github.com/ImYetiDev/RideNow-Bootcamp-IBM", 
-    github: "https://github.com/ImYetiDev/RideNow-Bootcamp-IBM", 
-    image: "/", 
-    tags: [TAGS.REACT, TAGS.GOOGLE_API],
-  },
-];
+// Convertimos los tags del JSON en objetos completos
+const PROJECTS = t.map((project) => ({
+  ...project,
+  tags: project.tags.map((key) => TAGS[key]),
+}));
+
 ---
 
 <div class="flex flex-col gap-y-16">

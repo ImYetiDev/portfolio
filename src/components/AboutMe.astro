@@ -1,5 +1,11 @@
 ---
 const personalImageAlt = "David Uribe"
+
+import en from "../language/en.json"
+import es from "../language/es.json"
+
+const lang = Astro.cookies.get("lang")?.value || "en"
+const about = lang === "es" ? en.ABOUT : es.ABOUT
 ---
 
 <article class="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row">
@@ -7,15 +13,15 @@ const personalImageAlt = "David Uribe"
     class="[&>p]:mb-4 [&>p>strong]:text-yellow-500 dark:[&>p>strong]:text-yellow-100 [&>p>strong]:font-normal [&>p>strong]:font-mono text-pretty order-2 md:order-1"
   >
     <p>
-      I’m a frontend developer with solid experience building modern interfaces using React, TypeScript, and design tools like Figma. I stand out for my quick learning ability and adaptability to new technologies proven by my successful work with cloud services like GCP and AWS without prior experience.
+      {about.p1}
     </p>
 
     <p>
-      I’ve contributed to large-scale platform development alongside multidisciplinary teams using agile methodologies, always prioritizing user experience and code quality. While frontend is my main focus, I’ve also taken on backend tasks such as building APIs with Node.js, demonstrating my versatility and commitment to product goals.
+      {about.p2}
     </p>
 
     <p>
-      I'm constantly learning and working on personal projects, exploring technologies like Astro, Firebase, and Tailwind CSS. I'm eager to continue growing as a developer by building functional, scalable, and user-centered digital products.
+      {about.p3}
     </p>
   </div>
 

@@ -14,14 +14,14 @@ import en from "../language/en.json"
 import es from "../language/es.json"
 
 const lang = Astro.cookies.get("lang")?.value || "en"
-const info = lang === "es" ? en.HERO : "es.HERO"
+const info = lang === "es" ? en.HERO : es.HERO
 ---
 
 <div class="max-w-xl">
   <div class="flex gap-4 mb-4">
     <img
       class="rounded-full shadow-lg size-16"
-      src="/me2.png" 
+      src="/me2.jpg" 
       alt={personalImageAlt}
     />
     <a

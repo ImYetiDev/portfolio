@@ -32,15 +32,14 @@
       "link": "https://github.com/ImYetiDev/RideNow-Bootcamp-IBM"
     }
   ],
-   "PROJECTS" = [
+   "PROJECTS": [
     {
     "title": "Netflix Clone",
     "description": "A Netflix clone built with Astro, Tailwind CSS, and TypeScript. Features a responsive design and dynamic content loading to mimic the Netflix experience.",
     "link": "https://netflux-clon.netlify.app/",
     "github": "https://github.com/ImYetiDev/clon-netflix",
     "image": "/netflix.png",
-    "tags": [TAGS.REACT, TAGS.TAILWIND
-      ],
+    "tags": ["REACT", "TAILWIND"]
     },
     {
     "title": "Globant People Events Platform",
@@ -48,8 +47,8 @@
     "link": "https://people-events-platform.web.app/",
     "github": "",
     "image": "/pep.png",
-    "tags": [TAGS.REACT, TAGS.TAILWIND
-      ],
+    "tags": ["REACT", "TAILWIND"
+      ]
     },
     {
     "title": "Bike Rental Application",
@@ -57,12 +56,13 @@
     "link": "https://github.com/ImYetiDev/RideNow-Bootcamp-IBM", 
     "github": "https://github.com/ImYetiDev/RideNow-Bootcamp-IBM", 
     "image": "/", 
-    "tags": [TAGS.REACT, TAGS.GOOGLE_API
-      ],
-    },
-  ];,
-  "about": {
-    "title": "Hi, I'm Yeti",
-    "description": "Frontend developer focused on building amazing UIs."
+    "tags": ["REACT", "GOOGLE_API"
+      ]
+    }
+  ],
+  "ABOUT": {
+    "p1": "I’m a frontend developer with solid experience building modern interfaces using React, TypeScript, and design tools like Figma. I stand out for my quick learning ability and adaptability to new technologies proven by my successful work with cloud services like GCP and AWS without prior experience.",
+    "p2": "I’ve contributed to large-scale platform development alongside multidisciplinary teams using agile methodologies, always prioritizing user experience and code quality. While frontend is my main focus, I’ve also taken on backend tasks such as building APIs with Node.js, demonstrating my versatility and commitment to product goals.",
+    "p3": "I'm constantly learning and working on personal projects, exploring technologies like Astro, Firebase, and Tailwind CSS. I'm eager to continue growing as a developer by building functional, scalable, and user-centered digital products."
   }
 }
