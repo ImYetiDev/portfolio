@@ -16,6 +16,7 @@ import es from "../language/es.json";
 
 const lang = Astro.cookies.get("lang")?.value || "en";
 const index = lang === "es" ? en.INDEX : es.INDEX;
+const hero = lang === "es" ? en.HERO : es.HERO;
 ---
 
 <Layout
@@ -24,7 +25,7 @@ const index = lang === "es" ? en.INDEX : es.INDEX;
 >
   <main class="px-4">
     <SectionContainer class="py-16 md:py-36">
-      <Hero>
+      <Hero title={hero.title} about={hero.description} />
     </SectionContainer>
   </main>
   <div class="space-y-24">
