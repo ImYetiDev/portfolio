@@ -1,21 +1,21 @@
 ---
-import Layout from "@/layouts/Layout.astro"
+import Layout from "@/layouts/Layout.astro";
 
-import AboutMe from "@/components/AboutMe.astro"
-import Briefcase from "@/components/icons/Briefcase.astro"
-import CodeIcon from "@/components/icons/Code.astro"
-import Experience from "@/components/Experience.astro"
-import ProfileCheck from "@/components/icons/ProfileCheck.astro"
-import Projects from "@/components/Projects.astro"
-import SectionContainer from "@/components/SectionContainer.astro"
-import Hero from "@/components/Hero.astro"
-import TitleSection from "@/components/TitleSection.astro"
+import AboutMe from "@/components/AboutMe.astro";
+import Briefcase from "@/components/icons/Briefcase.astro";
+import CodeIcon from "@/components/icons/Code.astro";
+import Experience from "@/components/Experience.astro";
+import ProfileCheck from "@/components/icons/ProfileCheck.astro";
+import Projects from "@/components/Projects.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import Hero from "@/components/Hero.astro";
+import TitleSection from "@/components/TitleSection.astro";
 
-import en from "../language/en.json"
-import es from "../language/es.json"
+import en from "../language/en.json";
+import es from "../language/es.json";
 
-const lang = Astro.cookies.get("lang")?.value || "en"
-const index = lang === "es" ? en.INDEX : es.INDEX
+const lang = Astro.cookies.get("lang")?.value || "en";
+const index = lang === "es" ? en.INDEX : es.INDEX;
 ---
 
 <Layout
@@ -25,10 +25,9 @@ const index = lang === "es" ? en.INDEX : es.INDEX
   <main class="px-4">
     <SectionContainer class="py-16 md:py-36">
       <Hero>
-      </slot>
-    </Hero>
     </SectionContainer>
-    <div class="space-y-24">
+  </main>
+  <div class="space-y-24">
     <SectionContainer id="proyectos">
       <TitleSection>
         <CodeIcon class="size-7" />
@@ -53,5 +52,4 @@ const index = lang === "es" ? en.INDEX : es.INDEX
       <AboutMe />
     </SectionContainer>
   </div>
-  </main>
 </Layout>

@@ -33,7 +33,7 @@ const TAGS = {
 // Convertimos los tags del JSON en objetos completos
 const PROJECTS = t.map((project) => ({
   ...project,
-  tags: project.tags.map((key) => TAGS[key]),
+  tags: project.tags.map((key) => TAGS[key as keyof typeof TAGS]),
 }));
 
 ---
