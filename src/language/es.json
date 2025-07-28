@@ -2,8 +2,9 @@
   "INDEX": {
     "section1": "Proyectos",
     "section2": "Experiencia",
-    "section3": "Sobre mí",
-    "section4": "Certificados"
+    "section3": "Certificados",
+    "section4": "Sobre mí",
+    "seeAll": "Ver todos los certificados"
   },
   "NAV": [
     {

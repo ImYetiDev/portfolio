@@ -2,10 +2,10 @@
   "INDEX": {
     "section1": "Projects",
     "section2": "Experience",
-    "section3": "About me",
-    "section4": "Certificates"
-  }
-  ,
+    "section3": "Certificates",
+    "section4": "About me",
+    "seeAll": "See all certificates"
+  },
   "NAV": [
     {
       "title": "Projects",

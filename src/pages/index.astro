@@ -49,23 +49,27 @@ const hero = lang === "es" ? en.HERO : es.HERO;
     <SectionContainer id="certificados">
       <TitleSection>
         <ProfileCheck class="size-8" />
-        {index.section4}
+        {index.section3}
       </TitleSection>
       <ImageSlider
         images={[
-          { src: "/certificados/globant/Advance_TC_Desing_Techniques.png", alt: "Certificado React" },
-          { src: "/certificados/globant/Advance_TC_Desing_Techniques.png", alt: "Certificado TypeScript" },
-          { src: "/certificados/globant/Advance_TC_Desing_Techniques.png", alt: "Certificado Tailwind CSS" },
+          { src: "/certificados/globant/Advance_TC_Desing_Techniques.png", alt: "Advance TC Design Techniques" },
+          { src: "/certificados/globant/Boinas_Green.png", alt: "Boinas Green" },
+          { src: "/certificados/globant/DB_Testing.png", alt: "DB Testing" },
+          { src: "/certificados/globant/Defect_Managment.png", alt: "Defect Management" },
+          { src: "/certificados/globant/Exploratory_Testing.png", alt: "Exploratory Testing" },
+          { src: "/certificados/globant/Testing_Estimation.png", alt: "Testing Estimation" },
+          { src: "/certificados/globant/Web_Accessibility.png", alt: "Web Accessibility" }
         ]}
         seeAllLink="/certificates"
-        more="Ver todos los certificados"
+        more={index.seeAll}
       />  
     </SectionContainer>
 
     <SectionContainer id="sobre-mi">
       <TitleSection>
         <ProfileCheck class="size-8" />
-        {index.section3}
+        {index.section4}
       </TitleSection>
       <AboutMe />
     </SectionContainer>
