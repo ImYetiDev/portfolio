@@ -6,7 +6,7 @@ import en from "../language/en.json"
 import es from "../language/es.json"
 
 const lang = Astro.cookies.get("lang")?.value || "en"
-const EXPERIENCE = lang === "en" ? es.EXPERIENCE : en.EXPERIENCE
+const EXPERIENCE = lang === "en" ? en.EXPERIENCE : es.EXPERIENCE
 
 ---
 
