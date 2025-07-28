@@ -46,14 +46,6 @@ const hero = lang === "es" ? en.HERO : es.HERO;
       <Experience />
     </SectionContainer>
 
-    <SectionContainer id="sobre-mi">
-      <TitleSection>
-        <ProfileCheck class="size-8" />
-        {index.section3}
-      </TitleSection>
-      <AboutMe />
-    </SectionContainer>
-
     <SectionContainer id="certificados">
       <TitleSection>
         <ProfileCheck class="size-8" />
@@ -66,7 +58,16 @@ const hero = lang === "es" ? en.HERO : es.HERO;
           { src: "/certificados/globant/Advance_TC_Desing_Techniques.png", alt: "Certificado Tailwind CSS" },
         ]}
         seeAllLink="/certificates"
+        more="Ver todos los certificados"
       />  
+    </SectionContainer>
+
+    <SectionContainer id="sobre-mi">
+      <TitleSection>
+        <ProfileCheck class="size-8" />
+        {index.section3}
+      </TitleSection>
+      <AboutMe />
     </SectionContainer>
   </div>
 </Layout>

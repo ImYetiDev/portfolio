@@ -1,40 +1,60 @@
 ---
-const { images = [], seeAllLink = "#" } = Astro.props;
+const { images = []} = Astro.props;
 ---
 
-<div class="flex flex-col items-center gap-6">
-  <div class="relative w-full overflow-x-auto hide-scrollbar">
-    <div class="flex gap-4 transition-transform duration-300 ease-in-out">
-      {
-        images.map((img) => (
-          <div class="min-w-[250px] md:min-w-[300px] lg:min-w-[350px] flex-shrink-0 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition">
-            <img
-              src={img.src}
-              alt={img.alt || "slider image"}
-              class="object-cover w-full h-48 sm:h-60 md:h-64"
-              loading="lazy"
-            />
-          </div>
-        ))
-      }
-    </div>
+<div class="relative w-full">
+  <!-- Botones de navegación -->
+  <button
+    class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-gray-800/70 hover:bg-gray-900 text-white p-2 rounded-full"
+    aria-label="Anterior"
+    onClick={() => {
+      const container = document.getElementById('slider-container');
+      container.scrollBy({ left: -300, behavior: 'smooth' });
+    }}
+  >
+    ‹
+  </button>
+  <button
+    class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-gray-800/70 hover:bg-gray-900 text-white p-2 rounded-full"
+    aria-label="Siguiente"
+    onClick={() => {
+      const container = document.getElementById('slider-container');
+      container.scrollBy({ left: 300, behavior: 'smooth' });
+    }}
+  >
+    ›
+  </button>
+
+  <!-- Slider -->
+  <div
+    id="slider-container"
+    class="flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth hide-scrollbar px-8"
+  >
+    {
+      images.map((img) => (
+        <a
+          href="/certificates" onclick="window.location.href='/certificates'"
+          class="snap-start min-w-[250px] md:min-w-[300px] lg:min-w-[350px] flex-shrink-0 rounded-xl overflow-hidden shadow-md transition transform hover:-translate-y-1 hover:shadow-2xl duration-300 group"
+        >
+          <img
+            src={img.src}
+            alt={img.alt || "Certificado"}
+            class="object-cover w-full h-48 sm:h-60 md:h-64 group-hover:scale-105 transition-transform duration-300"
+            loading="lazy"
+          />
+        </a>
+      ))
+    }
   </div>
 
-  <!-- Ver todos abajo del slider -->
-  <a
-    href={seeAllLink}
-    class="text-sm font-semibold text-blue-600 dark:text-blue-400 hover:underline mt-2"
-  >
-    Ver todos →
-  </a>
-</div>
-
-<!-- Ver todos al final, centrado -->
-<div class="mt-10 text-center">
-  <a
-    href={seeAllLink}
-    class="inline-block px-6 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition"
-  >
-    Ver todos
-  </a>
+  <!-- Botón "Ver todos" -->
+  <div class="mt-6 text-center">
+    <a
+      href="/certificates" onclick="window.location.href='/certificates'"
+      class="inline-block px-6 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition"
+      rel="external"
+    >
+      Ver todos los certificados →
+    </a>
+  </div>
 </div>
