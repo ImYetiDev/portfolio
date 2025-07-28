@@ -1,60 +1,77 @@
 ---
-const { images = []} = Astro.props;
+const { title = "Certificados", images = [], seeAllLink = "/certificates" } = Astro.props;
+const sliderId = `slider-${title.toLowerCase().replace(/\s+/g, '-')}`;
 ---
 
-<div class="relative w-full">
-  <!-- Botones de navegación -->
-  <button
-    class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-gray-800/70 hover:bg-gray-900 text-white p-2 rounded-full"
-    aria-label="Anterior"
-    onClick={() => {
-      const container = document.getElementById('slider-container');
-      container.scrollBy({ left: -300, behavior: 'smooth' });
-    }}
-  >
-    ‹
-  </button>
-  <button
-    class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-gray-800/70 hover:bg-gray-900 text-white p-2 rounded-full"
-    aria-label="Siguiente"
-    onClick={() => {
-      const container = document.getElementById('slider-container');
-      container.scrollBy({ left: 300, behavior: 'smooth' });
-    }}
-  >
-    ›
-  </button>
+<style>
+  .hide-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+</style>
 
-  <!-- Slider -->
-  <div
-    id="slider-container"
-    class="flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth hide-scrollbar px-8"
-  >
-    {
-      images.map((img) => (
-        <a
-          href="/certificates" onclick="window.location.href='/certificates'"
-          class="snap-start min-w-[250px] md:min-w-[300px] lg:min-w-[350px] flex-shrink-0 rounded-xl overflow-hidden shadow-md transition transform hover:-translate-y-1 hover:shadow-2xl duration-300 group"
-        >
-          <img
-            src={img.src}
-            alt={img.alt || "Certificado"}
-            class="object-cover w-full h-48 sm:h-60 md:h-64 group-hover:scale-105 transition-transform duration-300"
-            loading="lazy"
-          />
-        </a>
-      ))
-    }
+<section class="relative px-6">
+  <h2 class="text-xl font-bold mb-4 text-gray-800 dark:text-white">{title}</h2>
+
+  <div class="relative">
+    <!-- Botón Izquierdo -->
+    <button
+      type="button"
+      class="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full
+             bg-black/50 text-white text-3xl hover:bg-black/80 transition hidden md:block"
+      onclick={`document.getElementById('${sliderId}').scrollBy({ left: -1000, behavior: 'smooth' })`}
+    >
+      &#10094;
+    </button>
+
+    <!-- Botón Derecho -->
+    <button
+      type="button"
+      class="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full
+             bg-black/50 text-white text-3xl hover:bg-black/80 transition hidden md:block"
+      onclick={`document.getElementById('${sliderId}').scrollBy({ left: 1000, behavior: 'smooth' })`}
+    >
+      &#10095;
+    </button>
+
+    <!-- Slider -->
+    <div
+      id={sliderId}
+      class="flex gap-4 overflow-x-auto hide-scrollbar scroll-smooth snap-x snap-mandatory"
+    >
+      {
+  images.map((img) => (
+    <button
+      onClick={() => window.location.href = seeAllLink}
+      class="snap-start min-w-[250px] md:min-w-[300px] lg:min-w-[350px] flex-shrink-0 rounded-xl overflow-hidden shadow-md transition transform hover:-translate-y-1 hover:shadow-2xl duration-300 group relative"
+    >
+      <img
+        src={img.src}
+        alt={img.alt || "Certificado"}
+        class="object-cover w-full h-48 sm:h-60 md:h-64 group-hover:scale-105 transition-transform duration-300"
+        loading="lazy"
+      />
+      <!-- Overlay con descripción -->
+      <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center px-4 text-center">
+        <p class="text-white text-sm font-medium">{img.alt}</p>
+      </div>
+    </button>
+  ))
+}
+
+    </div>
   </div>
 
-  <!-- Botón "Ver todos" -->
+  <!-- Botón "Ver todos" debajo -->
   <div class="mt-6 text-center">
     <a
-      href="/certificates" onclick="window.location.href='/certificates'"
+      href={seeAllLink}
       class="inline-block px-6 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition"
-      rel="external"
     >
       Ver todos los certificados →
     </a>
   </div>
-</div>
+</section>
