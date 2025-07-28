@@ -16,8 +16,8 @@ import es from "../language/es.json";
 import ImageSlider from "@/components/ImageSlider.astro";
 
 const lang = Astro.cookies.get("lang")?.value || "en";
-const index = lang === "es" ? en.INDEX : es.INDEX;
-const hero = lang === "es" ? en.HERO : es.HERO;
+const index = lang === "es" ? es.INDEX : en.INDEX;
+const hero = lang === "es" ? es.HERO : en.HERO;
 ---
 
 <Layout

@@ -11,6 +11,9 @@ interface Props {
 }
 
 const { description, title } = Astro.props
+
+const lang = Astro.cookies.get("lang")?.value || "en";
+console.log("Language selected:", lang);
 ---
 
 <!doctype html>
