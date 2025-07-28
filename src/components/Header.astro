@@ -1,13 +1,13 @@
 ---
 import LanguageToggle from "./LanguageToggle.astro";
 import ThemeToggle from "./ThemeToggle.astro";
+import HomeIcon from "../components/icons/HomeIcon.astro";
 
-import en from "../language/en.json"
-import es from "../language/es.json"
+import en from "../language/en.json";
+import es from "../language/es.json";
 
-const lang = Astro.cookies.get("lang")?.value || "en"
-const navItems = lang === "es" ? en.NAV : es.NAV
-
+const lang = Astro.cookies.get("lang")?.value || "en";
+const navItems = lang === "es" ? en.NAV : es.NAV;
 ---
 
 <header
@@ -16,6 +16,14 @@ const navItems = lang === "es" ? en.NAV : es.NAV
   <nav
     class="flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center"
   >
+    <a
+      href="/"
+      class="relative block px-2 py-2 transition-transform hover:scale-110 text-white dark:text-white cursor-pointer"
+      aria-label="Home"
+    >
+      <HomeIcon size={22} aria-hidden="true" />
+    </a>
+
     {
       navItems.map((link) => (
         <a

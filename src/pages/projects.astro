@@ -1,0 +1,38 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { PROJECTS, TAGS } from "@/data/projects";
+---
+
+<Layout title="Proyectos" description="Explora mis proyectos web.">
+  <main class="px-4 py-20 max-w-7xl mx-auto space-y-24">
+    <h1 class="text-4xl font-bold mb-8 text-center">Proyectos</h1>
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        PROJECTS.map(({ slug, title, imageIndex, tags }) => (
+          <a
+            href={`/projects/${slug}`}
+            class="block rounded-xl overflow-hidden shadow hover:shadow-lg transform hover:-translate-y-1 transition"
+          >
+            <img src={imageIndex} alt={title} class="object-cover w-full h-48" />
+            <div class="p-4">
+              <h2 class="text-xl font-semibold">{title}</h2>
+              <div class="mt-2 flex flex-wrap gap-2">
+                {
+                  tags.map((key) => {
+                    const tag = TAGS[key];
+                    return (
+                      <span class={`flex items-center gap-x-1 text-xs ${tag.class} px-2 py-1 rounded-full`}>
+                        <tag.icon class="size-4" />
+                        {tag.name}
+                      </span>
+                    )
+                  })
+                }
+              </div>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </main>
+</Layout>
