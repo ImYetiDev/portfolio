@@ -1,0 +1,75 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import TitleSection from "@/components/TitleSection.astro";
+import Briefcase from "@/components/icons/Briefcase.astro";
+
+const CERTIFICATES = {
+  GLOBANT: [
+    { src: "/certificados/globant/Advance_TC_Desing_Techniques.png", alt: "Advanced Design Techniques - Globant" },
+    { src: "/certificados/globant/React_Specialist.png", alt: "React Specialist - Globant" },
+  ],
+  SENA: [
+    { src: "/certificados/sena/cert_sena_js.png", alt: "JavaScript - SENA" },
+    { src: "/certificados/sena/cert_sena_git.png", alt: "Git y GitHub - SENA" },
+  ],
+};
+
+// Obtener TODOS los certificados automáticamente
+const ALL_CERTIFICATES = Object.values(CERTIFICATES).flat();
+const SECTION_ORDER = ["ALL", ...Object.keys(CERTIFICATES)];
+const SECTION_TITLES = {
+  ALL: "Todos los Certificados",
+  GLOBANT: "Certificados Globant",
+  SENA: "Certificados SENA",
+};
+---
+
+<Layout title="Certificados" description="Explora todos los certificados obtenidos por David Uribe.">
+  <main class="px-4 py-20 space-y-24 max-w-7xl mx-auto">
+
+    <!-- Navegación interna -->
+    <nav class="flex justify-center gap-6 mb-12 text-sm font-medium text-blue-500">
+      {
+        SECTION_ORDER.map((key) => (
+          <a href={`#${key.toLowerCase()}`} class="hover:underline capitalize">{key === "ALL" ? "Todos" : key}</a>
+        ))
+      }
+    </nav>
+
+    {
+      SECTION_ORDER.map((key) => {
+        const certs = key === "ALL" ? ALL_CERTIFICATES : CERTIFICATES[key];
+        return (
+          <section id={key.toLowerCase()}>
+            <TitleSection>
+              <Briefcase class="size-6" />
+              {SECTION_TITLES[key]}
+            </TitleSection>
+            <div class="grid gap-6 mt-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4" data-aos="fade-up">
+              {
+                certs.map((cert) => (
+                  <div class="overflow-hidden rounded-xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1 duration-300">
+                    <img
+                      src={cert.src}
+                      alt={cert.alt}
+                      class="object-cover w-full h-full"
+                      loading="lazy"
+                    />
+                  </div>
+                ))
+              }
+            </div>
+          </section>
+        );
+      })
+    }
+
+  </main>
+
+  <!-- Script para animaciones al hacer scroll -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script>
+    document.addEventListener('DOMContentLoaded', () => AOS.init({ once: true }))
+  </script>
+</Layout>

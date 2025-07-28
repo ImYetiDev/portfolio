@@ -1,0 +1,40 @@
+---
+const { images = [], seeAllLink = "#" } = Astro.props;
+---
+
+<div class="flex flex-col items-center gap-6">
+  <div class="relative w-full overflow-x-auto hide-scrollbar">
+    <div class="flex gap-4 transition-transform duration-300 ease-in-out">
+      {
+        images.map((img) => (
+          <div class="min-w-[250px] md:min-w-[300px] lg:min-w-[350px] flex-shrink-0 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition">
+            <img
+              src={img.src}
+              alt={img.alt || "slider image"}
+              class="object-cover w-full h-48 sm:h-60 md:h-64"
+              loading="lazy"
+            />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+
+  <!-- Ver todos abajo del slider -->
+  <a
+    href={seeAllLink}
+    class="text-sm font-semibold text-blue-600 dark:text-blue-400 hover:underline mt-2"
+  >
+    Ver todos →
+  </a>
+</div>
+
+<!-- Ver todos al final, centrado -->
+<div class="mt-10 text-center">
+  <a
+    href={seeAllLink}
+    class="inline-block px-6 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition"
+  >
+    Ver todos
+  </a>
+</div>

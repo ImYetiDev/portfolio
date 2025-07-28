@@ -13,6 +13,7 @@ import TitleSection from "@/components/TitleSection.astro";
 
 import en from "../language/en.json";
 import es from "../language/es.json";
+import ImageSlider from "@/components/ImageSlider.astro";
 
 const lang = Astro.cookies.get("lang")?.value || "en";
 const index = lang === "es" ? en.INDEX : es.INDEX;
@@ -51,6 +52,21 @@ const hero = lang === "es" ? en.HERO : es.HERO;
         {index.section3}
       </TitleSection>
       <AboutMe />
+    </SectionContainer>
+
+    <SectionContainer id="certificados">
+      <TitleSection>
+        <ProfileCheck class="size-8" />
+        {index.section4}
+      </TitleSection>
+      <ImageSlider
+        images={[
+          { src: "/certificados/globant/Advance_TC_Desing_Techniques.png", alt: "Certificado React" },
+          { src: "/certificados/globant/Advance_TC_Desing_Techniques.png", alt: "Certificado TypeScript" },
+          { src: "/certificados/globant/Advance_TC_Desing_Techniques.png", alt: "Certificado Tailwind CSS" },
+        ]}
+        seeAllLink="/certificates"
+      />  
     </SectionContainer>
   </div>
 </Layout>
