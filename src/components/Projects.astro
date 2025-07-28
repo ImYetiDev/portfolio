@@ -5,11 +5,12 @@ import Tailwind from "./icons/Tailwind.astro";
 import Link from "./icons/Link.astro";
 import LinkButton from "./LinkButton.astro";
 
-import en from "../language/en.json"
-import es from "../language/es.json"
+import en from "../language/en.json";
+import es from "../language/es.json";
 
-const lang = Astro.cookies.get("lang")?.value || "en"
-const t = lang === "es" ? en.PROJECTS : es.PROJECTS
+const lang = Astro.cookies.get("lang")?.value || "en";
+const t = lang === "es" ? en.PROJECTS : es.PROJECTS;
+const more = lang === "es" ? en.INDEX.seeAll : es.INDEX.seeAll;
 
 // Iconos y estilos no se traducen, así que se mantienen aquí
 const TAGS = {
@@ -35,7 +36,6 @@ const PROJECTS = t.map((project) => ({
   ...project,
   tags: project.tags.map((key) => TAGS[key as keyof typeof TAGS]),
 }));
-
 ---
 
 <div class="flex flex-col gap-y-16">
@@ -93,4 +93,14 @@ const PROJECTS = t.map((project) => ({
       </article>
     ))
   }
+
+  <div class="mt-6 text-center">
+    <a
+      href="/projects"
+      onclick="window.location.href='/projects'"
+      class="inline-block px-6 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition"
+    >
+      {more || "Ver todos los proyectos"}
+    </a>
+  </div>
 </div>
