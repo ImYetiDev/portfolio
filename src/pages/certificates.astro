@@ -3,109 +3,119 @@ import Layout from "@/layouts/Layout.astro";
 import TitleSection from "@/components/TitleSection.astro";
 import Briefcase from "@/components/icons/Briefcase.astro";
 
+const lang = Astro.cookies.get("lang")?.value || "en";
+
 const CERTIFICATES = {
-    GLOBANT: [
-        {
-            src: "/certificados/globant/Advance_TC_Desing_Techniques.png",
-            alt: "Advanced Design Techniques - Globant",
-        },
-        { src: "/certificados/globant/Boinas_Green.png", alt: "Boinas Green - Globant" },
-        { src: "/certificados/globant/DB_Testing.png", alt: "DB Testing - Globant" },
-        {
-            src: "/certificados/globant/Defect_Managment.png",
-            alt: "Defect Management - Globant",
-        },
-        {
-            src: "/certificados/globant/Exploratory_Testing.png",
-            alt: "Exploratory Testing - Globant",
-        },
-        {
-            src: "/certificados/globant/Testing_Estimation.png",
-            alt: "Testing Estimation - Globant",
-        },
-        {
-            src: "/certificados/globant/Web_Accessibility.png",
-            alt: "Web Accessibility - Globant",
-        },
-    ],
-    SENA: [
-        {
-            src: "/certificados/sena/cert_sena_js.png",
-            alt: "JavaScript - SENA",
-        }
-    ],
+  GLOBANT: [
+    {
+      src: "/certificados/globant/Advance_TC_Desing_Techniques.png",
+      alt: "Advanced Design Techniques - Globant",
+    },
+    { src: "/certificados/globant/Boinas_Green.png", alt: "Boinas Green - Globant" },
+    { src: "/certificados/globant/DB_Testing.png", alt: "DB Testing - Globant" },
+    {
+      src: "/certificados/globant/Defect_Managment.png",
+      alt: "Defect Management - Globant",
+    },
+    {
+      src: "/certificados/globant/Exploratory_Testing.png",
+      alt: "Exploratory Testing - Globant",
+    },
+    {
+      src: "/certificados/globant/Testing_Estimation.png",
+      alt: "Testing Estimation - Globant",
+    },
+    {
+      src: "/certificados/globant/Web_Accessibility.png",
+      alt: "Web Accessibility - Globant",
+    },
+  ],
+  SENA: [
+    {
+      src: "/certificados/sena/cert_sena_js.png",
+      alt: "JavaScript - SENA",
+    },
+  ],
 };
 
-// Obtener TODOS los certificados automáticamente
 const ALL_CERTIFICATES = Object.values(CERTIFICATES).flat();
 const SECTION_ORDER = ["ALL", ...Object.keys(CERTIFICATES)];
+
 const SECTION_TITLES = {
-    ALL: "Todos los Certificados",
+  es: {
+    ALL: "Todos",
     GLOBANT: "Certificados Globant",
     SENA: "Certificados SENA",
+  },
+  en: {
+    ALL: "All",
+    GLOBANT: "Globant Certificates",
+    SENA: "SENA Certificates",
+  },
 };
+
+const titles = SECTION_TITLES[lang];
 ---
 
 <Layout
-    title="Certificados"
-    description="Explora todos los certificados obtenidos por David Uribe."
+  title={titles.ALL}
+  description="Explora todos los certificados obtenidos por David Uribe."
 >
-    <main class="px-4 py-20 space-y-24 max-w-7xl mx-auto">
-        <!-- Navegación interna -->
-        <nav
-            class="fixed top-20 left-0 right-0 z-10 flex items-center justify-center w-full space-x-2 bg-white/60 dark:bg-gray-900/60 backdrop-blur-md p-2 rounded-full mx-auto max-w-fit shadow-md"
-        >
-            {
-                SECTION_ORDER.map((key) => (
-                    <a
-                        href={`#${key.toLowerCase()}`}
-                        class="px-4 py-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 transition"
-                    >
-                        {key === "ALL" ? "Todos" : key}
-                    </a>
-                ))
-            }
-        </nav>
+  <main class="px-4 py-20 space-y-24 max-w-7xl mx-auto">
+    <!-- Navegación -->
+    <nav
+      class="fixed top-20 left-0 right-0 z-10 flex items-center justify-center w-full space-x-2 bg-white/60 dark:bg-gray-900/60 backdrop-blur-md p-2 rounded-full mx-auto max-w-fit shadow-md"
+    >
+      {
+        SECTION_ORDER.map((key) => (
+          <a
+            href={`#${key.toLowerCase()}`}
+            class="px-4 py-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 transition"
+          >
+            {titles[key]}
+          </a>
+        ))
+      }
+    </nav>
 
-        {
-            SECTION_ORDER.map((key) => {
-                const certs =
-                    key === "ALL" ? ALL_CERTIFICATES : CERTIFICATES[key];
-                return (
-                    <section id={key.toLowerCase()}>
-                        <TitleSection>
-                            <Briefcase class="size-6" />
-                            {SECTION_TITLES[key]}
-                        </TitleSection>
-                        <div
-                            class="grid gap-6 mt-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
-                            data-aos="fade-up"
-                        >
-                            {certs.map((cert) => (
-                                <a
-                                    href={`/certificates`}
-                                    class="overflow-hidden rounded-xl shadow-md hover:shadow-2xl transform hover:-translate-y-1 transition duration-300 block group"
-                                >
-                                    <img
-                                        src={cert.src}
-                                        alt={cert.alt}
-                                        class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
-                                    />
-                                </a>
-                            ))}
-                        </div>
-                    </section>
-                );
-            })
-        }
-    </main>
-
-    <!-- Script para animaciones al hacer scroll -->
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-    <script>
-        document.addEventListener("DOMContentLoaded", () =>
-            AOS.init({ once: true }),
+    {
+      SECTION_ORDER.map((key) => {
+        const certs = key === "ALL" ? ALL_CERTIFICATES : CERTIFICATES[key];
+        return (
+          <section id={key.toLowerCase()}>
+            <TitleSection>
+              <Briefcase class="size-6" />
+              {titles[key]}
+            </TitleSection>
+            <div
+              class="grid gap-6 mt-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+              data-aos="fade-up"
+            >
+              {certs.map((cert) => (
+                <a
+                  href={`/certificates`}
+                  class="overflow-hidden rounded-xl shadow-md hover:shadow-2xl transform hover:-translate-y-1 transition duration-300 block group"
+                >
+                  <img
+                    src={cert.src}
+                    alt={cert.alt}
+                    class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+                  />
+                </a>
+              ))}
+            </div>
+          </section>
         );
-    </script>
+      })
+    }
+  </main>
+
+  <!-- AOS Animaciones -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script>
+    document.addEventListener("DOMContentLoaded", () =>
+      AOS.init({ once: true })
+    );
+  </script>
 </Layout>

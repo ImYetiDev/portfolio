@@ -10,7 +10,7 @@ import es from "../language/es.json";
 
 const lang = Astro.cookies.get("lang")?.value || "en";
 const t = lang === "es" ? en.PROJECTS : es.PROJECTS;
-const more = lang === "es" ? en.INDEX.seeAll : es.INDEX.seeAll;
+const more = lang === "es" ? en.INDEX.seeAllProjects : es.INDEX.seeAllProjects;
 
 // Iconos y estilos no se traducen, así que se mantienen aquí
 const TAGS = {

@@ -4,7 +4,8 @@
     "section2": "Experiencia",
     "section3": "Certificados",
     "section4": "Sobre mí",
-    "seeAll": "Ver todos"
+    "seeAllCertificates": "Ver todos los certificados",
+    "seeAllProjects": "Ver todos los proyectos"
   },
   "NAV": [
     {
@@ -85,5 +86,11 @@
     "p1": "Soy un desarrollador frontend con experiencia sólida en la creación de interfaces modernas utilizando React, TypeScript y herramientas de diseño como Figma. Me destaco por mi capacidad de aprendizaje rápido y adaptación a nuevas tecnologías, lo cual se refleja en mi trabajo exitoso con servicios en la nube como GCP y AWS, sin tener experiencia previa en esos campos.",
     "p2": "He contribuido al desarrollo de plataformas a gran escala junto a equipos multidisciplinarios, utilizando metodologías ágiles y siempre priorizando la experiencia del usuario y la calidad del código. Aunque mi enfoque principal es el frontend, también he asumido tareas de backend, como la creación de APIs con Node.js, demostrando mi versatilidad y compromiso con los objetivos del producto.",
     "p3": "Estoy en constante aprendizaje y trabajando en proyectos personales, explorando tecnologías como Astro, Firebase y Tailwind CSS. Mi objetivo es seguir creciendo como desarrollador, creando productos digitales funcionales, escalables y centrados en el usuario."
-  }
+  },
+  "CERTIFICATES": [
+    {
+      "All": "Desarrollo Web Frontend",
+      "Certificates": "asdf"
+    }
+  ]
 }

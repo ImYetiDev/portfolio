@@ -1,8 +1,6 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import { PROJECTS, TAGS } from "@/data/projects";
-import { Astro } from "astro";
-
 const { slug } = Astro.params;
 const project = PROJECTS.find((p) => p.slug === slug);
 
