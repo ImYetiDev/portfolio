@@ -1,11 +1,17 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import { PROJECTS, TAGS } from "@/data/projects";
+
+const lang = Astro.cookies.get("lang")?.value || "en";
+const titlePag = lang === "es" ? "Proyectos" : "Projects";
+const description = lang === "es"
+  ? "Explora mis proyectos web, incluyendo aplicaciones de gestión de tareas, portafolios y más."
+  : "Explore my web projects, including task management apps, portfolios, and more.";
 ---
 
-<Layout title="Proyectos" description="Explora mis proyectos web.">
+<Layout title={titlePag} description={description}>
   <main class="px-4 py-20 max-w-7xl mx-auto space-y-24">
-    <h1 class="text-4xl font-bold mb-8 text-center">Proyectos</h1>
+    <h1 class="text-4xl font-bold mb-8 text-center">{titlePag}</h1>
     <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
       {
         PROJECTS.map(({ slug, title, imageIndex, tags }) => (
