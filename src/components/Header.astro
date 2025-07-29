@@ -28,7 +28,7 @@ const navItems = lang === "es" ? es.NAV : en.NAV;
     {
       navItems.map((link) => (
         <a
-          onclick="window.location.href='/certificates'"
+          onclick={`window.location.href='/${link.url}'`}
           class="relative block px-2 py-2 transition hover:text-blue-500 dark:hover:text-blue-500"
           aria-label={link.label}
           href={link.url}
