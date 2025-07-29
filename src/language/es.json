@@ -30,9 +30,10 @@
     }
   ],
   "HERO": {
-    "title": "Hola, soy Yeti",
-    "company": "ImYetiDev",
-    "description": "Desarrollador Frontend con experiencia práctica en la creación de aplicaciones responsivas y centradas en el usuario, utilizando React, TypeScript y herramientas web modernas. He contribuido en proyectos reales usando plataformas en la nube como GCP y AWS, y disfruto transformar ideas complejas en interfaces limpias y escalables. Actualmente trabajo en proyectos personales y de código abierto mientras busco oportunidades para crecer y colaborar con equipos apasionados."
+    "title": "Hola, soy David Uribe",
+    "description": "Desarrollador Frontend con experiencia práctica en la creación de aplicaciones responsivas y centradas en el usuario, utilizando React, TypeScript y herramientas web modernas. He contribuido en proyectos reales usando plataformas en la nube como GCP y AWS, y disfruto transformar ideas complejas en interfaces limpias y escalables. Actualmente trabajo en proyectos personales y de código abierto mientras busco oportunidades para crecer y colaborar con equipos apasionados.",
+    "available": "Disponible para trabajar",
+    "contact": "Contáctame"
   },
   "EXPERIENCE": [
     {

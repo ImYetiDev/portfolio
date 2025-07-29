@@ -14,7 +14,7 @@ import en from "../language/en.json"
 import es from "../language/es.json"
 
 const lang = Astro.cookies.get("lang")?.value || "en"
-const info = lang === "es" ? en.HERO : es.HERO
+const info = lang === "es" ? es.HERO : en.HERO
 ---
 
 <div class="max-w-xl">
@@ -30,7 +30,7 @@ const info = lang === "es" ? en.HERO : es.HERO
       rel="noopener"
       class="flex items-center transition md:justify-center md:hover:scale-105"
     >
-      <Badge>Available for work</Badge>
+      <Badge>{ info.available }</Badge>
     </a>
   </div>
   <h1
@@ -46,7 +46,7 @@ const info = lang === "es" ? en.HERO : es.HERO
   <nav class="flex flex-wrap gap-4 mt-8">
     <SocialPill href="mailto:imyeti479@gmail.com">  <!-- Asegúrate de poner tu email -->
       <MailIcon class="size-4" />
-      Contact Me
+      { info.contact }
     </SocialPill>
     <SocialPill href="https://github.com/ImYetiDev">
       <LinkedInIcon class="size-4" />

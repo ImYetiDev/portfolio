@@ -1,6 +1,7 @@
 ---
-const { title = "Certificados", images = [], seeAllLink = "/certificates" } = Astro.props;
-const sliderId = `slider-${title.toLowerCase().replace(/\s+/g, '-')}`;
+const {  images = [], seeAllLink = "/certificates" } = Astro.props;
+const a = seeAllLink.replace(/^\//, "");
+const sliderId = `slider-${a.toLowerCase().replace(/\s+/g, '-')}`;
 const more = Astro.props.more || "See all certificates";
 ---
 
@@ -15,9 +16,7 @@ const more = Astro.props.more || "See all certificates";
 </style>
 
 <section class="relative px-6">
-  <h2 class="text-xl font-bold mb-4 text-gray-800 dark:text-white">{title}</h2>
 
-  <div class="relative">
     <!-- Botón Izquierdo -->
 <button
   type="button"
@@ -45,7 +44,7 @@ const more = Astro.props.more || "See all certificates";
       class="flex gap-4 overflow-x-auto hide-scrollbar scroll-smooth snap-x snap-mandatory"
     >
       {
-  images.map((img) => (
+  images.map((img: { src: string; alt?: string }) => (
     <a
       href="/certificates" onclick="window.location.href='/certificates'"
       class="snap-start min-w-[250px] md:min-w-[300px] lg:min-w-[350px] flex-shrink-0 rounded-xl overflow-hidden shadow-md transition transform hover:-translate-y-1 hover:shadow-2xl duration-300 group relative"
