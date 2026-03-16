@@ -1,0 +1,75 @@
+---
+import Layout from "@/layouts/Layout.astro";
+
+import en from "../../language/en.json";
+import es from "../../language/es.json";
+
+const lang = Astro.cookies.get("lang")?.value || "en";
+const t = lang === "es" ? es.SOLD_PRODUCTS : en.SOLD_PRODUCTS;
+const labels = lang === "es" ? es.SOLD_PRODUCTS_LABELS : en.SOLD_PRODUCTS_LABELS;
+
+const { slug } = Astro.params;
+const product = t.find((p) => p.slug === slug);
+
+if (!product) {
+  throw new Error("Producto no encontrado");
+}
+
+const galleryImages = [
+  ...(product.images || []),
+  ...((product.detail && product.detail.moreImages) || []),
+];
+---
+
+<Layout title={product.title} description={product.description}>
+  <main class="px-4 py-20 max-w-5xl mx-auto space-y-10">
+    <div class="space-y-3">
+      <a href="/#productos-vendidos" class="text-sm text-blue-600 hover:underline">
+        {labels.backToList}
+      </a>
+      <h1 class="text-4xl font-bold">{product.title}</h1>
+      <p class="text-gray-600 dark:text-gray-300">
+        {labels.company}: {product.company}
+      </p>
+      <p class="text-lg text-gray-700 dark:text-gray-300">{product.description}</p>
+    </div>
+
+    <section class="grid gap-6 md:grid-cols-2">
+      <div class="space-y-3">
+        <h2 class="text-2xl font-semibold">{labels.summary}</h2>
+        <p class="text-gray-700 dark:text-gray-300">{product.detail?.summary}</p>
+      </div>
+      <div class="space-y-3">
+        <h2 class="text-2xl font-semibold">{labels.role}</h2>
+        <p class="text-gray-700 dark:text-gray-300">{product.detail?.role}</p>
+      </div>
+    </section>
+
+    <section class="space-y-3">
+      <h2 class="text-2xl font-semibold">{labels.stack}</h2>
+      <div class="flex flex-wrap gap-2">
+        {(product.detail?.stack || []).map((item) => (
+          <span class="px-3 py-1 rounded-full bg-gray-200 text-gray-800 text-sm">{item}</span>
+        ))}
+      </div>
+    </section>
+
+    <section class="space-y-3">
+      <h2 class="text-2xl font-semibold">{labels.highlights}</h2>
+      <ul class="list-disc pl-5 text-gray-700 dark:text-gray-300 space-y-1">
+        {(product.detail?.highlights || []).map((item) => (
+          <li>{item}</li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="space-y-4">
+      <h2 class="text-2xl font-semibold">{labels.gallery}</h2>
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {galleryImages.map((img) => (
+          <img src={img} alt={product.title} class="rounded-xl object-cover w-full h-40" />
+        ))}
+      </div>
+    </section>
+  </main>
+</Layout>

@@ -1,15 +1,21 @@
 {
   "INDEX": {
-    "section1": "Proyectos",
+    "section1": "Proyectos personales",
+    "sectionProductsSold": "Productos vendidos",
     "section2": "Experiencia",
     "section3": "Certificados",
     "section4": "Sobre mí",
     "seeAllCertificates": "Ver todos los certificados",
-    "seeAllProjects": "Ver todos los proyectos"
+    "seeAllProjects": "Ver todos los proyectos personales"
   },
   "NAV": [
     {
-      "title": "Proyectos",
+      "title": "Productos vendidos",
+      "label": "productos-vendidos",
+      "url": "/#productos-vendidos"
+    },
+    {
+      "title": "Proyectos personales",
       "label": "proyectos",
       "url": "/#proyectos"
     },
@@ -81,6 +87,123 @@
       "github": "https://github.com/ImYetiDev/RideNow-Bootcamp-IBM",
       "image": "/",
       "tags": ["REACT", "GOOGLE_API"]
+    }
+  ],
+  "SOLD_PRODUCTS_LABELS": {
+    "company": "Empresa",
+    "companyPrivate": "Empresa: confidencial",
+    "code": "Codigo",
+    "codePrivate": "Codigo privado",
+    "imagesPrivate": "Imagenes privadas",
+    "preview": "Preview",
+    "details": "Ver detalles",
+    "backToList": "Volver a productos vendidos",
+    "summary": "Resumen",
+    "role": "Rol",
+    "stack": "Stack",
+    "highlights": "Resultados",
+    "gallery": "Galeria"
+  },
+  "SOLD_PRODUCTS": [
+    {
+      "slug": "crm-empresa-a",
+      "title": "CRM de ventas retail",
+      "description": "CRM para gestionar clientes, oportunidades y pipeline comercial. Enfocado en equipos de ventas con multiples etapas y reportes.",
+      "company": "Empresa Privada A",
+      "showCompany": true,
+      "showImages": true,
+      "showCode": false,
+      "codeUrl": "",
+      "codeLabel": "",
+      "link": "",
+      "image": "/projects/spotify-clone/main.png",
+      "images": ["/projects/spotify-clone/details1.png", "/projects/spotify-clone/details2.png"],
+      "detail": {
+        "summary": "Centraliza el pipeline de ventas, automatiza tareas y ofrece visibilidad de KPI comerciales.",
+        "role": "Diseño UI, frontend y definicion de flujo con el cliente.",
+        "stack": ["React", "TypeScript", "Tailwind", "API REST"],
+        "highlights": [
+          "Panel de oportunidades con filtros avanzados",
+          "Reportes por asesor y etapa",
+          "Automatizacion de recordatorios"
+        ],
+        "moreImages": ["/netflix.png"]
+      }
+    },
+    {
+      "slug": "crm-empresa-b",
+      "title": "CRM postventa industrial",
+      "description": "CRM para seguimiento de clientes, tickets y renovaciones en procesos B2B.",
+      "company": "Empresa Privada B",
+      "showCompany": true,
+      "showImages": true,
+      "showCode": false,
+      "codeUrl": "",
+      "codeLabel": "",
+      "link": "",
+      "image": "/pep.png",
+      "images": ["/pep.png"],
+      "detail": {
+        "summary": "Mejora el control de postventa y el cumplimiento de SLA con tableros de seguimiento.",
+        "role": "Frontend, componentizacion y soporte al diseño UX.",
+        "stack": ["React", "TypeScript", "Charts", "API REST"],
+        "highlights": [
+          "Vista 360 de clientes",
+          "Seguimiento de tickets por prioridad",
+          "Alertas de renovacion"
+        ],
+        "moreImages": ["/projects/spotify-clone/main.png"]
+      }
+    },
+    {
+      "slug": "gestion-peluquerias",
+      "title": "Gestion multi-peluquerias",
+      "description": "Aplicacion para coordinar sucursales, agenda, inventario y ventas en varias peluquerias.",
+      "company": "Cadena Privada C",
+      "showCompany": true,
+      "showImages": true,
+      "showCode": false,
+      "codeUrl": "",
+      "codeLabel": "",
+      "link": "",
+      "image": "/netflix.png",
+      "images": ["/netflix.png", "/pep.png"],
+      "detail": {
+        "summary": "Unifica operaciones de multiples sedes con control de citas, caja e inventario.",
+        "role": "Frontend, integracion de modulos y pruebas de usabilidad.",
+        "stack": ["React", "TypeScript", "Tailwind", "Calendario"],
+        "highlights": [
+          "Agenda centralizada por sede",
+          "Control de inventario por salon",
+          "Reportes de ventas diarios"
+        ],
+        "moreImages": ["/projects/spotify-clone/details1.png"]
+      }
+    },
+    {
+      "slug": "erp-cliente-privado",
+      "title": "ERP para cliente privado",
+      "description": "ERP para compras, inventario, ventas y reportes financieros.",
+      "company": "Cliente Privado D",
+      "showCompany": true,
+      "showImages": true,
+      "showCode": false,
+      "codeUrl": "",
+      "codeLabel": "",
+      "link": "",
+      "image": "/projects/spotify-clone/details2.png",
+      "images": ["/projects/spotify-clone/details2.png", "/netflix.png"],
+      "detail": {
+        "summary": "Integra procesos clave con dashboards financieros y control de inventario.",
+        "role": "Frontend, definicion de pantallas y validaciones.",
+        "stack": ["React", "TypeScript", "Tailwind", "API REST"],
+        "highlights": [
+          "Flujo de compras y proveedores",
+          "Kardex y movimientos de inventario",
+          "Reportes financieros basicos"
+        ],
+        "moreImages": ["/pep.png"]
+      }
     }
   ],
   "ABOUT": {

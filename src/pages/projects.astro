@@ -3,10 +3,10 @@ import Layout from "@/layouts/Layout.astro";
 import { PROJECTS, TAGS } from "@/data/projects";
 
 const lang = Astro.cookies.get("lang")?.value || "en";
-const titlePag = lang === "es" ? "Proyectos" : "Projects";
+const titlePag = lang === "es" ? "Proyectos personales" : "Personal Projects";
 const description = lang === "es"
-  ? "Explora mis proyectos web, incluyendo aplicaciones de gestión de tareas, portafolios y más."
-  : "Explore my web projects, including task management apps, portfolios, and more.";
+  ? "Explora mis proyectos personales, incluyendo aplicaciones web, portafolios y más."
+  : "Explore my personal projects, including web apps, portfolios, and more.";
 ---
 
 <Layout title={titlePag} description={description}>

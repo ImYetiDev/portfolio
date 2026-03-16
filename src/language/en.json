@@ -1,15 +1,21 @@
 {
   "INDEX": {
-    "section1": "Projects",
+    "section1": "Personal Projects",
+    "sectionProductsSold": "Sold Products",
     "section2": "Experience",
     "section3": "Certificates",
     "section4": "About me",
     "seeAllCertificates": "View all Certificates",
-    "seeAllProjects": "View all Projects"
+    "seeAllProjects": "View all Personal Projects"
   },
   "NAV": [
     {
-      "title": "Projects",
+      "title": "Sold Products",
+      "label": "productos-vendidos",
+      "url": "/#productos-vendidos"
+    },
+    {
+      "title": "Personal Projects",
       "label": "proyectos",
       "url": "/#proyectos"
     },
@@ -90,6 +96,123 @@
         "REACT",
         "GOOGLE_API"
       ]
+    }
+  ],
+  "SOLD_PRODUCTS_LABELS": {
+    "company": "Company",
+    "companyPrivate": "Company: confidential",
+    "code": "Code",
+    "codePrivate": "Code private",
+    "imagesPrivate": "Images private",
+    "preview": "Preview",
+    "details": "View details",
+    "backToList": "Back to sold products",
+    "summary": "Summary",
+    "role": "Role",
+    "stack": "Stack",
+    "highlights": "Results",
+    "gallery": "Gallery"
+  },
+  "SOLD_PRODUCTS": [
+    {
+      "slug": "crm-company-a",
+      "title": "Retail sales CRM",
+      "description": "CRM to manage customers, opportunities, and sales pipeline. Built for multi-stage sales teams and reporting.",
+      "company": "Private Company A",
+      "showCompany": true,
+      "showImages": true,
+      "showCode": false,
+      "codeUrl": "",
+      "codeLabel": "",
+      "link": "",
+      "image": "/projects/spotify-clone/main.png",
+      "images": ["/projects/spotify-clone/details1.png", "/projects/spotify-clone/details2.png"],
+      "detail": {
+        "summary": "Centralizes the sales pipeline, automates tasks, and provides visibility into sales KPIs.",
+        "role": "UI design, frontend, and flow definition with the client.",
+        "stack": ["React", "TypeScript", "Tailwind", "REST API"],
+        "highlights": [
+          "Opportunity board with advanced filters",
+          "Reports by rep and stage",
+          "Automated reminders"
+        ],
+        "moreImages": ["/netflix.png"]
+      }
+    },
+    {
+      "slug": "crm-company-b",
+      "title": "Industrial after-sales CRM",
+      "description": "CRM for customer follow-up, tickets, and renewals in B2B processes.",
+      "company": "Private Company B",
+      "showCompany": true,
+      "showImages": true,
+      "showCode": false,
+      "codeUrl": "",
+      "codeLabel": "",
+      "link": "",
+      "image": "/pep.png",
+      "images": ["/pep.png"],
+      "detail": {
+        "summary": "Improves after-sales control and SLA compliance with monitoring dashboards.",
+        "role": "Frontend, componentization, and UX support.",
+        "stack": ["React", "TypeScript", "Charts", "REST API"],
+        "highlights": [
+          "360 customer view",
+          "Ticket tracking by priority",
+          "Renewal alerts"
+        ],
+        "moreImages": ["/projects/spotify-clone/main.png"]
+      }
+    },
+    {
+      "slug": "multi-salon-management",
+      "title": "Multi-salon management",
+      "description": "App to coordinate branches, scheduling, inventory, and sales across multiple salons.",
+      "company": "Private Chain C",
+      "showCompany": true,
+      "showImages": true,
+      "showCode": false,
+      "codeUrl": "",
+      "codeLabel": "",
+      "link": "",
+      "image": "/netflix.png",
+      "images": ["/netflix.png", "/pep.png"],
+      "detail": {
+        "summary": "Unifies operations across branches with appointment, cash, and inventory control.",
+        "role": "Frontend, module integration, and usability testing.",
+        "stack": ["React", "TypeScript", "Tailwind", "Calendar"],
+        "highlights": [
+          "Centralized scheduling per branch",
+          "Inventory control per salon",
+          "Daily sales reports"
+        ],
+        "moreImages": ["/projects/spotify-clone/details1.png"]
+      }
+    },
+    {
+      "slug": "private-client-erp",
+      "title": "ERP for a private client",
+      "description": "ERP for purchasing, inventory, sales, and financial reporting.",
+      "company": "Private Client D",
+      "showCompany": true,
+      "showImages": true,
+      "showCode": false,
+      "codeUrl": "",
+      "codeLabel": "",
+      "link": "",
+      "image": "/projects/spotify-clone/details2.png",
+      "images": ["/projects/spotify-clone/details2.png", "/netflix.png"],
+      "detail": {
+        "summary": "Integrates key processes with financial dashboards and inventory control.",
+        "role": "Frontend, screen definition, and validations.",
+        "stack": ["React", "TypeScript", "Tailwind", "REST API"],
+        "highlights": [
+          "Purchasing and suppliers flow",
+          "Inventory movements and kardex",
+          "Basic financial reports"
+        ],
+        "moreImages": ["/pep.png"]
+      }
     }
   ],
   "ABOUT": {

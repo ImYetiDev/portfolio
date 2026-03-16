@@ -1,0 +1,80 @@
+---
+import LinkButton from "./LinkButton.astro";
+import GitHub from "./icons/GitHub.astro";
+import Link from "./icons/Link.astro";
+
+import en from "../language/en.json";
+import es from "../language/es.json";
+
+const lang = Astro.cookies.get("lang")?.value || "en";
+const t = lang === "es" ? es.SOLD_PRODUCTS : en.SOLD_PRODUCTS;
+const labels = lang === "es" ? es.SOLD_PRODUCTS_LABELS : en.SOLD_PRODUCTS_LABELS;
+---
+
+<div class="flex flex-col gap-y-16">
+  {
+    t.map((product) => (
+      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+        <div class="w-full md:w-1/2">
+          {product.showImages ? (
+            <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+              <a href={`/productos-vendidos/${product.slug}`} class="w-full">
+                <img
+                  alt={product.title}
+                  class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+                  loading="lazy"
+                  src={product.image || product.images?.[0]}
+                />
+              </a>
+            </div>
+          ) : (
+            <div class="flex items-center justify-center h-56 rounded-xl border border-gray-300 bg-gray-100 text-gray-600">
+              {labels.imagesPrivate}
+            </div>
+          )}
+        </div>
+
+        <div class="w-full md:w-1/2 md:max-w-lg">
+          <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+            {product.title}
+          </h3>
+          <div class="mt-2 text-gray-700 dark:text-gray-400">
+            {product.description}
+          </div>
+
+          <div class="mt-3 flex flex-wrap gap-2 text-sm text-gray-600 dark:text-gray-400">
+            {product.showCompany ? (
+              <span>{labels.company}: {product.company}</span>
+            ) : (
+              <span>{labels.companyPrivate}</span>
+            )}
+            {!product.showCode && (
+              <span class="rounded-full bg-gray-200 px-2 py-1 text-xs text-gray-700">
+                {labels.codePrivate}
+              </span>
+            )}
+          </div>
+
+          <footer class="flex items-end justify-start mt-4 gap-x-4">
+            <LinkButton href={`/productos-vendidos/${product.slug}`}>
+              <Link class="size-4" />
+              {labels.details}
+            </LinkButton>
+            {product.showCode && product.codeUrl && (
+              <LinkButton href={product.codeUrl}>
+                <GitHub class="size-6" />
+                {product.codeLabel || labels.code}
+              </LinkButton>
+            )}
+            {product.link && (
+              <LinkButton href={product.link}>
+                <Link class="size-4" />
+                {labels.preview}
+              </LinkButton>
+            )}
+          </footer>
+        </div>
+      </article>
+    ))
+  }
+</div>

@@ -7,6 +7,7 @@ import CodeIcon from "@/components/icons/Code.astro";
 import Experience from "@/components/Experience.astro";
 import ProfileCheck from "@/components/icons/ProfileCheck.astro";
 import Projects from "@/components/Projects.astro";
+import SoldProducts from "@/components/SoldProducts.astro";
 import SectionContainer from "@/components/SectionContainer.astro";
 import Hero from "@/components/Hero.astro";
 import TitleSection from "@/components/TitleSection.astro";
@@ -30,6 +31,14 @@ const hero = lang === "es" ? es.HERO : en.HERO;
     </SectionContainer>
   </main>
   <div class="space-y-12">
+    <SectionContainer id="productos-vendidos">
+      <TitleSection>
+        <Briefcase class="size-8" />
+        {index.sectionProductsSold}
+      </TitleSection>
+      <SoldProducts />
+    </SectionContainer>
+
     <SectionContainer id="proyectos">
       <TitleSection>
         <CodeIcon class="size-7" />
