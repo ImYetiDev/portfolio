@@ -2,6 +2,7 @@
 import Layout from "@/layouts/Layout.astro";
 import { PROJECTS } from "@/data/projects";
 import { TAGS } from "../data/tags.ts";
+import BackButton from "@/components/BackButton.astro";
 
 const lang = Astro.cookies.get("lang")?.value || "en";
 const titlePag = lang === "es" ? "Proyectos personales" : "Personal Projects";
@@ -13,6 +14,10 @@ const description =
 
 <Layout title={titlePag} description={description}>
   <main class="px-4 py-20 max-w-7xl mx-auto space-y-24">
+    <BackButton
+      href="/"
+      label={lang === "es" ? "Volver al inicio" : "Back to Home"}
+    />
     <h1 class="text-4xl font-bold mb-8 text-center">{titlePag}</h1>
     <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
       {

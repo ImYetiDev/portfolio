@@ -1,5 +1,6 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import BackButton from "@/components/BackButton.astro";
 
 import en from "../../language/en.json";
 import es from "../../language/es.json";
@@ -27,12 +28,10 @@ const galleryImages = [
 <Layout title={product.title} description={product.description}>
   <main class="px-4 py-20 max-w-7xl mx-auto space-y-12">
     <div class="space-y-3">
-      <a
-        href="/#productos-vendidos"
-        class="text-sm text-blue-600 hover:underline"
-      >
-        {labels.backToList}
-      </a>
+      <BackButton
+        href="/productos-vendidos"
+        label={lang === "es" ? "Volver a productos vendidos" : "Back to Sold Products"}
+      />
       <h1 class="text-4xl font-bold">{product.title}</h1>
       <p class="text-gray-600 dark:text-gray-300">
         {labels.company}: {product.company}
