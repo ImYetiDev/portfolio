@@ -1,0 +1,67 @@
+---
+import Layout from "@/layouts/Layout.astro";
+
+import en from "../language/en.json";
+import es from "../language/es.json";
+
+const lang = Astro.cookies.get("lang")?.value || "en";
+
+const t = lang === "es"
+  ? es.SOLD_PRODUCTS
+  : en.SOLD_PRODUCTS;
+
+const titlePag = lang === "es"
+  ? "Productos vendidos"
+  : "Commercial Projects";
+
+const description = lang === "es"
+  ? "Soluciones desarrolladas para clientes reales, incluyendo CRM, sistemas de gestión y plataformas empresariales."
+  : "Solutions developed for real clients, including CRM systems, management platforms, and business applications.";
+
+const labels = lang === "es"
+  ? es.SOLD_PRODUCTS_LABELS
+  : en.SOLD_PRODUCTS_LABELS;
+---
+
+<Layout title={titlePag} description={description}>
+  <main class="px-4 py-20 max-w-7xl mx-auto space-y-24">
+    <h1 class="text-4xl font-bold mb-8 text-center">
+      {titlePag}
+    </h1>
+
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        t.map((product) => (
+          <a
+            href={`/productos-vendidos/${product.slug}`}
+            class="block rounded-xl overflow-hidden shadow hover:shadow-lg transform hover:-translate-y-1 transition"
+          >
+            <img
+              src={product.image || product.images?.[0]}
+              alt={product.title}
+              class="object-cover w-full h-48"
+            />
+
+            <div class="p-4 space-y-3">
+              <h2 class="text-xl font-semibold">
+                {product.title}
+              </h2>
+
+              <p class="text-sm text-gray-600 dark:text-gray-400 line-clamp-3">
+                {product.description}
+              </p>
+
+              {
+                product.showCompany && (
+                  <p class="text-xs text-gray-500 dark:text-gray-500">
+                    {labels.company}: {product.company}
+                  </p>
+                )
+              }
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </main>
+</Layout>
