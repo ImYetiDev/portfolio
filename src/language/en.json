@@ -146,9 +146,9 @@
         "summary": "Developed a sales CRM focused on lead management, customer tracking, and sales opportunities. The platform manages the complete sales cycle from first contact to deal closure, including stage tracking, agent assignment, performance reporting, and operational metrics for commercial teams.",
         "role": "UI Design, Full Stack Development, QA, and Deployment.",
         "stack": [
-          "React",
-          "TypeScript",
-          "Tailwind",
+          "REACT",
+          "TYPESCRIPT",
+          "TAILWIND",
           "REST API"
         ],
         "highlights": [
@@ -185,9 +185,8 @@
         "summary": "Developed a platform focused on managing existing customers, enabling commercial follow-up, renewal tracking, interaction logging, and a complete view of each customer's commercial history.",
         "role": "UI Design, Full Stack Development, QA, and Deployment.",
         "stack": [
-          "React",
-          "TypeScript",
-          "Charts",
+          "REACT",
+          "TYPESCRIPT",
           "REST API"
         ],
         "highlights": [
@@ -225,10 +224,10 @@
         "summary": "Management system designed to centralize daily salon operations, including service administration, sales tracking, cash register closing, operational expenses, and financial reporting from a single platform.",
         "role": "Frontend Development, Module Integration, QA, and Deployment.",
         "stack": [
-          "React",
-          "TypeScript",
-          "Tailwind",
-          "Calendar"
+          "REACT",
+          "TYPESCRIPT",
+          "TAILWIND",
+          "CALENDAR"
         ],
         "highlights": [
           "Management of services performed by stylists.",
@@ -263,9 +262,9 @@
         "summary": "Integrates key processes with financial dashboards and inventory control.",
         "role": "Frontend, screen definition, and validations.",
         "stack": [
-          "React",
-          "TypeScript",
-          "Tailwind",
+          "REACT",
+          "TYPESCRIPT",
+          "TAILWIND",
           "REST API"
         ],
         "highlights": [

@@ -1,5 +1,5 @@
 import GitHub from "@/components/icons/GitHub.astro";
-import NextJS from "@/components/icons/NextJS.astro";
+import React from "@/components/icons/React.astro";
 import Tailwind from "@/components/icons/Tailwind.astro";
 
 import AstroIcon from "@/components/icons/Astro.astro";
@@ -11,7 +11,7 @@ export const TAGS = {
   REACT: {
     name: "React",
     class: "bg-blue-500 text-white",
-    icon: NextJS,
+    icon: React,
   },
 
   ASTRO: {

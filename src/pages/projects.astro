@@ -1,6 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import { PROJECTS, TAGS } from "@/data/projects";
+import { PROJECTS } from "@/data/projects";
+import { TAGS } from "../data/tags.ts";
 
 const lang = Astro.cookies.get("lang")?.value || "en";
 const titlePag = lang === "es" ? "Proyectos personales" : "Personal Projects";
@@ -35,6 +36,9 @@ const description =
               <div class="flex flex-wrap gap-2">
                 {tags.map((key) => {
                   const tag = TAGS[key];
+
+                  if (!tag) return null;
+
                   return (
                     <span
                       class={`flex items-center gap-x-1 text-xs ${tag.class} px-2 py-1 rounded-full`}
