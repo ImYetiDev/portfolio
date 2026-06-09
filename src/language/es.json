@@ -37,16 +37,46 @@
   ],
   "HERO": {
     "title": "Hola, soy David Uribe",
-    "description": "Desarrollador Frontend con experiencia práctica en la creación de aplicaciones responsivas y centradas en el usuario, utilizando React, TypeScript y herramientas web modernas. He contribuido en proyectos reales usando plataformas en la nube como GCP y AWS, y disfruto transformar ideas complejas en interfaces limpias y escalables. Actualmente trabajo en proyectos personales y de código abierto mientras busco oportunidades para crecer y colaborar con equipos apasionados.",
+    "description": "Desarrollador Frontend y Full Stack  especializado en aplicaciones de negocio y sistemas de gestión. He desarrollado y comercializado soluciones para ventas, gestión de clientes y operaciones empresariales utilizando React, Astro, TypeScript, Firebase y arquitecturas escalables orientadas al rendimiento. Mi experiencia incluye CRM para equipos comerciales, plataformas de gestión operativa y aplicaciones con estrategias avanzadas de caché para reducir consultas a la base de datos y mejorar la experiencia del usuario.",
     "available": "Disponible para trabajar",
     "contact": "Contáctame"
   },
   "EXPERIENCE": [
     {
+      "date": "2025",
+      "title": "Desarrollador Full Stack",
+      "company": "CRM Comercial para Gestión de Ventas y Clientes",
+      "description": "Diseñé y desarrollé una plataforma CRM para la gestión de prospectos, clientes y oportunidades comerciales. Implementé seguimiento por etapas, asignación de agentes, reportes operativos y un sistema de caché con control de versiones para optimizar el consumo de datos y reducir consultas a Firestore."
+    },
+    {
+      "date": "2025",
+      "title": "Desarrollador Full Stack",
+      "company": "CRM de Seguimiento y Fidelización de Clientes",
+      "description": "Desarrollé una plataforma orientada a la gestión de clientes activos, permitiendo realizar seguimiento comercial, renovaciones, registro de interacciones y visualización completa del historial de cada cliente. La solución incorpora optimizaciones de rendimiento mediante sincronización eficiente y estrategias de caché."
+    },
+    {
+      "date": "2026",
+      "title": "Desarrollador Full Stack",
+      "company": "Jimmy Ardila Alta Peluquería",
+      "description": "Desarrollé un sistema de gestión para peluquerías enfocado en la administración de servicios, ventas, control de caja y reportes financieros. La plataforma permite gestionar ingresos, gastos, cierres diarios, métricas semanales y mensuales, así como la visualizacion mediante calendario integrado."
+    },
+    {
       "date": "2024",
       "title": "Plataforma de Eventos para Personas (Proyecto Interno)",
+      "company": "Globant",
+      "description": "Colaboré en el desarrollo de una plataforma interna de gestión de eventos utilizando React. Participé en la construcción de interfaces para la administración de eventos y visualización de métricas operativas."
+    },
+    {
+      "date": "2024",
+      "title": "Plataforma de gestion empresarial (Proyecto Interno)",
       "company": "Globant (Proyecto Interno)",
-      "description": "Colaboré en el desarrollo de una plataforma interna de gestión de eventos en Globant. La plataforma permite a los organizadores de eventos gestionar eficientemente los eventos y visualizar métricas clave. Se utilizó React para construir una interfaz interactiva y fácil de usar."
+      "description": "Colaboré en el desarrollo de una plataforma interna de gestión de empresas en Globant. La plataforma esta diseñada para conectar diferentes areas de la empresa con un sistema de tablas intuitivo como si fuera una unica tabla empresarial que gestiona cada area de la empresa interconectadas entre si y conectarlo con un chatbot desarrollado internamente "
+    },
+    {
+      "date": "2024",
+      "title": "Aplicación de Alquiler de Bicicletas",
+      "company": "Ride Now",
+      "description": "Desarrollé una aplicación de alquiler de bicicletas con control de acceso por roles, integración con Google Maps y gestión de datos mediante MySQL."
     },
     {
       "date": "2024",
@@ -54,13 +84,6 @@
       "company": "ImYetiDev",
       "description": "Creé un clon de Netflix utilizando Astro, Tailwind CSS y TypeScript. El proyecto cuenta con un diseño responsivo, carga dinámica de contenido y una interfaz de usuario amigable que imita la experiencia de Netflix.",
       "link": "https://netflux-clon.netlify.app/"
-    },
-    {
-      "date": "2024 - Actualidad",
-      "title": "Desarrollador Frontend (Proyecto Personal)",
-      "company": "Ride Now",
-      "description": "Desarrollé una aplicación de alquiler de bicicletas que incluye control de acceso basado en roles, integración con la API de Google Maps para el seguimiento en tiempo real de la ubicación de las bicicletas y una base de datos MySQL para gestionar los datos de usuarios y bicicletas.",
-      "link": "https://github.com/ImYetiDev/RideNow-Bootcamp-IBM"
     }
   ],
   "PROJECTS": [
@@ -70,7 +93,10 @@
       "link": "https://netflux-clon.netlify.app/",
       "github": "https://github.com/ImYetiDev/clon-netflix",
       "image": "/netflix.png",
-      "tags": ["REACT", "TAILWIND"]
+      "tags": [
+        "REACT",
+        "TAILWIND"
+      ]
     },
     {
       "title": "Plataforma de Eventos para Personas de Globant",
@@ -78,15 +104,10 @@
       "link": "https://people-events-platform.web.app/",
       "github": "",
       "image": "/pep.png",
-      "tags": ["REACT", "TAILWIND"]
-    },
-    {
-      "title": "Aplicación de Alquiler de Bicicletas",
-      "description": "Una plataforma de alquiler de bicicletas con gestión de roles, integración con una base de datos MySQL y seguimiento en tiempo real de la ubicación de las bicicletas utilizando la API de Google Maps. Desarrollada durante el evento Senasoft 2024.",
-      "link": "https://github.com/ImYetiDev/RideNow-Bootcamp-IBM",
-      "github": "https://github.com/ImYetiDev/RideNow-Bootcamp-IBM",
-      "image": "/",
-      "tags": ["REACT", "GOOGLE_API"]
+      "tags": [
+        "REACT",
+        "TAILWIND"
+      ]
     }
   ],
   "SOLD_PRODUCTS_LABELS": {
@@ -107,33 +128,50 @@
   "SOLD_PRODUCTS": [
     {
       "slug": "crm-empresa-a",
-      "title": "CRM de ventas retail",
+      "title": "CRM Comercial para Gestión de Ventas y Clientes",
       "description": "CRM para gestionar clientes, oportunidades y pipeline comercial. Enfocado en equipos de ventas con multiples etapas y reportes.",
-      "company": "Empresa Privada A",
+      "company": "Empresa Privada",
       "showCompany": true,
       "showImages": true,
       "showCode": false,
       "codeUrl": "",
       "codeLabel": "",
       "link": "",
-      "image": "/projects/spotify-clone/main.png",
-      "images": ["/projects/spotify-clone/details1.png", "/projects/spotify-clone/details2.png"],
+      "image": "/projects/sold-products/peluqueria/cierre.png",
+      "images": [
+        "/projects/spotify-clone/details1.png",
+        "/projects/spotify-clone/details2.png"
+      ],
       "detail": {
-        "summary": "Centraliza el pipeline de ventas, automatiza tareas y ofrece visibilidad de KPI comerciales.",
-        "role": "Diseño UI, frontend y definicion de flujo con el cliente.",
-        "stack": ["React", "TypeScript", "Tailwind", "API REST"],
-        "highlights": [
-          "Panel de oportunidades con filtros avanzados",
-          "Reportes por asesor y etapa",
-          "Automatizacion de recordatorios"
+        "summary": "Desarrollé un CRM comercial enfocado en la gestión de prospectos, clientes y oportunidades de venta. La plataforma permite administrar el ciclo comercial desde el primer contacto hasta el cierre de la venta, incorporando seguimiento de estados, asignación de agentes, reportes de rendimiento y métricas operativas para los equipos comerciales.",
+        "role": "Diseño UI, Fullstack, QA y Deploy.",
+        "stack": [
+          "React",
+          "TypeScript",
+          "Tailwind",
+          "Firestore REST",
+          "Firestore SDK",
+          "Netlify"
         ],
-        "moreImages": ["/netflix.png"]
+        "highlights": [
+          "Control de versiones de datos para sincronización eficiente.",
+          "Reducción significativa de consultas mediante estrategias de caché local.",
+          "Gestión centralizada de clientes y oportunidades.",
+          "Sistema de cache con control de versiones para minimizar consultas a Firestore.",
+          "Asignación y seguimiento de clientes por agente.",
+          "Filtros avanzados para equipos comerciales.",
+          "Reportes por estado y rendimiento.",
+          "Arquitectura optimizada para operar con grandes volúmenes de datos."
+        ],
+        "moreImages": [
+          "/netflix.png"
+        ]
       }
     },
     {
       "slug": "crm-empresa-b",
-      "title": "CRM postventa industrial",
-      "description": "CRM para seguimiento de clientes, tickets y renovaciones en procesos B2B.",
+      "title": "CRM de Seguimiento y Fidelización de Clientes",
+      "description": "Plataforma para la gestión y seguimiento de clientes activos, enfocada en la continuidad comercial, renovaciones y control de relaciones a largo plazo.",
       "company": "Empresa Privada B",
       "showCompany": true,
       "showImages": true,
@@ -142,74 +180,78 @@
       "codeLabel": "",
       "link": "",
       "image": "/pep.png",
-      "images": ["/pep.png"],
+      "images": [
+        "/pep.png"
+      ],
       "detail": {
-        "summary": "Mejora el control de postventa y el cumplimiento de SLA con tableros de seguimiento.",
-        "role": "Frontend, componentizacion y soporte al diseño UX.",
-        "stack": ["React", "TypeScript", "Charts", "API REST"],
-        "highlights": [
-          "Vista 360 de clientes",
-          "Seguimiento de tickets por prioridad",
-          "Alertas de renovacion"
+        "summary": "Desarrollé una plataforma orientada a la gestión de clientes existentes, permitiendo a los equipos comerciales realizar seguimiento continuo, controlar renovaciones, registrar interacciones y mantener una visión completa del historial comercial de cada cliente.",
+        "role": "Diseño UI, Fullstack, QA y Deploy.",
+        "stack": [
+          "React",
+          "TypeScript",
+          "Tailwind",
+          "Firestore REST",
+          "Firestore SDK",
+          "Netlify"
         ],
-        "moreImages": ["/projects/spotify-clone/main.png"]
+        "highlights": [
+          "Control de versiones de datos para sincronización eficiente.",
+          "Reducción significativa de consultas mediante estrategias de caché local.",
+          "Vista 360 del historial comercial de cada cliente.",
+          "Seguimiento de renovaciones y continuidad de servicios.",
+          "Registro de interacciones y actividades comerciales.",
+          "Filtros avanzados para segmentación de clientes.",
+          "Sistema de caché para reducir consultas repetitivas.",
+          "Reportes operativos y métricas de seguimiento."
+        ],
+        "moreImages": [
+          "/projects/spotify-clone/main.png"
+        ]
       }
     },
     {
       "slug": "gestion-peluquerias",
       "title": "Gestion multi-peluquerias",
-      "description": "Aplicacion para coordinar sucursales, agenda, inventario y ventas en varias peluquerias.",
-      "company": "Cadena Privada C",
+      "description": "Aplicacion para coordinar sucursales, agenda, ventas y cierres de caja en varias peluquerias.",
+      "company": "Jimmy Ardila Alta Peluqueria",
       "showCompany": true,
       "showImages": true,
       "showCode": false,
       "codeUrl": "",
       "codeLabel": "",
       "link": "",
-      "image": "/netflix.png",
-      "images": ["/netflix.png", "/pep.png"],
+      "image": "/projects/sold-products/peluqueria/cierre.png",
+      "images": [
+        "/projects/sold-products/peluqueria/caja.png",
+        "/projects/sold-products/peluqueria/calendario.png",
+        "/projects/sold-products/peluqueria/login.png",
+        "/projects/sold-products/peluqueria/servicios.png"
+      ],
       "detail": {
-        "summary": "Unifica operaciones de multiples sedes con control de citas, caja e inventario.",
+        "summary": "Sistema de gestión diseñado para centralizar la operación diaria de peluquerías, permitiendo administrar servicios, ventas, cierres de caja, gastos operativos y reportes financieros desde una única plataforma.",
         "role": "Frontend, integracion de modulos y pruebas de usabilidad.",
-        "stack": ["React", "TypeScript", "Tailwind", "Calendario"],
-        "highlights": [
-          "Agenda centralizada por sede",
-          "Control de inventario por salon",
-          "Reportes de ventas diarios"
+        "stack": [
+          "React",
+          "TypeScript",
+          "Tailwind",
+          "Firestore REST",
+          "Netlify"
         ],
-        "moreImages": ["/projects/spotify-clone/details1.png"]
-      }
-    },
-    {
-      "slug": "erp-cliente-privado",
-      "title": "ERP para cliente privado",
-      "description": "ERP para compras, inventario, ventas y reportes financieros.",
-      "company": "Cliente Privado D",
-      "showCompany": true,
-      "showImages": true,
-      "showCode": false,
-      "codeUrl": "",
-      "codeLabel": "",
-      "link": "",
-      "image": "/projects/spotify-clone/details2.png",
-      "images": ["/projects/spotify-clone/details2.png", "/netflix.png"],
-      "detail": {
-        "summary": "Integra procesos clave con dashboards financieros y control de inventario.",
-        "role": "Frontend, definicion de pantallas y validaciones.",
-        "stack": ["React", "TypeScript", "Tailwind", "API REST"],
         "highlights": [
-          "Flujo de compras y proveedores",
-          "Kardex y movimientos de inventario",
-          "Reportes financieros basicos"
-        ],
-        "moreImages": ["/pep.png"]
+          "Gestión de servicios realizados por estilistas.",
+          "Control de ventas por colaborador.",
+          "Apertura y cierre de caja.",
+          "Registro de ingresos y gastos operativos.",
+          "Reportes diarios, semanales y mensuales.",
+          "Calendario para programación y seguimiento de citas."
+        ]
       }
     }
   ],
   "ABOUT": {
-    "p1": "Soy un desarrollador frontend con experiencia sólida en la creación de interfaces modernas utilizando React, TypeScript y herramientas de diseño como Figma. Me destaco por mi capacidad de aprendizaje rápido y adaptación a nuevas tecnologías, lo cual se refleja en mi trabajo exitoso con servicios en la nube como GCP y AWS, sin tener experiencia previa en esos campos.",
-    "p2": "He contribuido al desarrollo de plataformas a gran escala junto a equipos multidisciplinarios, utilizando metodologías ágiles y siempre priorizando la experiencia del usuario y la calidad del código. Aunque mi enfoque principal es el frontend, también he asumido tareas de backend, como la creación de APIs con Node.js, demostrando mi versatilidad y compromiso con los objetivos del producto.",
-    "p3": "Estoy en constante aprendizaje y trabajando en proyectos personales, explorando tecnologías como Astro, Firebase y Tailwind CSS. Mi objetivo es seguir creciendo como desarrollador, creando productos digitales funcionales, escalables y centrados en el usuario."
+    "p1": "Soy desarrollador frontend especializado en aplicaciones empresariales y plataformas de gestión.",
+    "p2": "Durante los últimos años he participado en el diseño y desarrollo de sistemas para ventas, seguimiento de clientes, operaciones comerciales y control administrativo, trabajando principalmente con React, TypeScript, Astro y Firebase.",
+    "p3": "Además de construir interfaces modernas, me enfoco en el rendimiento y la escalabilidad de las aplicaciones, implementando estrategias de caché, control de versiones de datos y optimización de consultas para reducir costos operativos y mejorar la experiencia del usuario. También cuento con experiencia colaborando directamente con clientes para definir requerimientos, diseñar flujos de trabajo y transformar necesidades de negocio en productos digitales funcionales."
   },
   "CERTIFICATES": [
     {

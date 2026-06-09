@@ -37,30 +37,53 @@
   ],
   "HERO": {
     "title": "Hi, I'm David Uribe",
-    "description": "Frontend Developer with hands-on experience building responsive, user-focused applications using React, TypeScript, and modern web tools. I’ve contributed to real-world projects using cloud platforms like GCP and AWS, and I enjoy turning complex ideas into clean, scalable interfaces. Currently working on personal and open-source projects while looking for opportunities to grow and collaborate with passionate teams.",
+    "description": "Frontend & Full Stack Developer specialized in business applications and management systems. I have developed and commercialized solutions for sales, customer management, and business operations using React, Astro, TypeScript, Firebase, and performance-oriented scalable architectures. My experience includes CRM platforms for sales teams, operational management systems, and applications with advanced caching strategies designed to reduce database queries and improve user experience.",
     "available": "Available for work",
     "contact": "Contact me"
   },
   "EXPERIENCE": [
     {
+      "date": "2025",
+      "title": "Full Stack Developer",
+      "company": "Sales & Customer Management CRM",
+      "description": "Designed and developed a CRM platform focused on lead management, customer tracking, and sales opportunities. Implemented sales pipeline workflows, agent assignment, operational reporting, and a version-controlled caching system to optimize data consumption and reduce Firestore queries."
+    },
+    {
+      "date": "2025",
+      "title": "Full Stack Developer",
+      "company": "Customer Retention & Relationship CRM",
+      "description": "Developed a platform focused on managing existing customers, enabling commercial follow-up, renewals, interaction tracking, and a complete customer history view. The solution incorporates performance optimizations through efficient synchronization and caching strategies."
+    },
+    {
+      "date": "2025 - Present",
+      "title": "Full Stack Developer",
+      "company": "Jimmy Ardila Alta Peluquería",
+      "description": "Developed a management platform for beauty salons focused on service administration, sales tracking, cash register control, and financial reporting. The system provides income and expense management, daily cash closing, weekly and monthly metrics, and appointment scheduling through an integrated calendar."
+    },
+    {
       "date": "2024",
-      "title": "People Events Platform (Intern Project)",
-      "company": "Globant (Internal Project)",
-      "description": "Collaborated in the development of an internal event management platform at Globant. The platform enables event managers to efficiently organize events and visualize key metrics. Utilized React to build an interactive, user-friendly interface."
+      "title": "People Events Platform (Internal Project)",
+      "company": "Globant",
+      "description": "Contributed to the development of an internal event management platform using React. Participated in building interfaces for event administration and operational metrics visualization."
+    },
+    {
+      "date": "2024",
+      "title": "Enterprise Management Platform (Internal Project)",
+      "company": "Globant",
+      "description": "Collaborated in the development of an internal enterprise management platform designed to connect multiple business areas through an intuitive data-driven interface. The platform centralized information across departments and integrated with an internally developed AI assistant."
+    },
+    {
+      "date": "2024",
+      "title": "Bike Rental Application",
+      "company": "Ride Now",
+      "description": "Developed a bike rental platform featuring role-based access control, Google Maps integration, and MySQL-based data management."
     },
     {
       "date": "2024",
       "title": "Netflix Clone (Personal Project)",
       "company": "ImYetiDev",
-      "description": "Created a netflix clone using Astro, Tailwind CSS, and TypeScript. The project features a responsive design, dynamic content loading, and a user-friendly interface that mimics the Netflix experience.",
+      "description": "Built a Netflix-inspired streaming platform using Astro, Tailwind CSS, and TypeScript. The project features responsive design, dynamic content loading, and a user experience similar to Netflix.",
       "link": "https://netflux-clon.netlify.app/"
-    },
-    {
-      "date": "2024 - Present",
-      "title": "Frontend Developer (Personal Project)",
-      "company": "Ride Now",
-      "description": "Developed a bike rental application featuring role-based access control, integration with Google Maps API for real-time bike location tracking, and a MySQL database to manage user and bike data.",
-      "link": "https://github.com/ImYetiDev/RideNow-Bootcamp-IBM"
     }
   ],
   "PROJECTS": [
@@ -85,17 +108,6 @@
         "REACT",
         "TAILWIND"
       ]
-    },
-    {
-      "title": "Bike Rental Application",
-      "description": "A bike rental platform with role management, MySQL database integration, and real-time bike location tracking using Google Maps API. Developed during the Senasoft 2024 event.",
-      "link": "https://github.com/ImYetiDev/RideNow-Bootcamp-IBM",
-      "github": "https://github.com/ImYetiDev/RideNow-Bootcamp-IBM",
-      "image": "/",
-      "tags": [
-        "REACT",
-        "GOOGLE_API"
-      ]
     }
   ],
   "SOLD_PRODUCTS_LABELS": {
@@ -116,8 +128,8 @@
   "SOLD_PRODUCTS": [
     {
       "slug": "crm-company-a",
-      "title": "Retail sales CRM",
-      "description": "CRM to manage customers, opportunities, and sales pipeline. Built for multi-stage sales teams and reporting.",
+      "title": "Sales & Customer Management CRM",
+      "description": "CRM platform designed to manage leads, customers, and sales opportunities. Focused on sales teams operating through multiple pipeline stages and performance reporting.",
       "company": "Private Company A",
       "showCompany": true,
       "showImages": true,
@@ -126,23 +138,38 @@
       "codeLabel": "",
       "link": "",
       "image": "/projects/spotify-clone/main.png",
-      "images": ["/projects/spotify-clone/details1.png", "/projects/spotify-clone/details2.png"],
+      "images": [
+        "/projects/spotify-clone/details1.png",
+        "/projects/spotify-clone/details2.png"
+      ],
       "detail": {
-        "summary": "Centralizes the sales pipeline, automates tasks, and provides visibility into sales KPIs.",
-        "role": "UI design, frontend, and flow definition with the client.",
-        "stack": ["React", "TypeScript", "Tailwind", "REST API"],
-        "highlights": [
-          "Opportunity board with advanced filters",
-          "Reports by rep and stage",
-          "Automated reminders"
+        "summary": "Developed a sales CRM focused on lead management, customer tracking, and sales opportunities. The platform manages the complete sales cycle from first contact to deal closure, including stage tracking, agent assignment, performance reporting, and operational metrics for commercial teams.",
+        "role": "UI Design, Full Stack Development, QA, and Deployment.",
+        "stack": [
+          "React",
+          "TypeScript",
+          "Tailwind",
+          "REST API"
         ],
-        "moreImages": ["/netflix.png"]
+        "highlights": [
+          "Data version control for efficient synchronization.",
+          "Significant query reduction through local caching strategies.",
+          "Centralized lead, customer, and opportunity management.",
+          "Version-controlled cache system to minimize Firestore requests.",
+          "Customer assignment and tracking by sales agent.",
+          "Advanced filtering tools for commercial teams.",
+          "Performance and status reporting dashboards.",
+          "Architecture optimized to handle large datasets."
+        ],
+        "moreImages": [
+          "/netflix.png"
+        ]
       }
     },
     {
       "slug": "crm-company-b",
-      "title": "Industrial after-sales CRM",
-      "description": "CRM for customer follow-up, tickets, and renewals in B2B processes.",
+      "title": "Customer Retention & Relationship CRM",
+      "description": "Platform designed to manage active customers, focusing on long-term relationships, renewals, and customer lifecycle tracking.",
       "company": "Private Company B",
       "showCompany": true,
       "showImages": true,
@@ -151,23 +178,37 @@
       "codeLabel": "",
       "link": "",
       "image": "/pep.png",
-      "images": ["/pep.png"],
+      "images": [
+        "/pep.png"
+      ],
       "detail": {
-        "summary": "Improves after-sales control and SLA compliance with monitoring dashboards.",
-        "role": "Frontend, componentization, and UX support.",
-        "stack": ["React", "TypeScript", "Charts", "REST API"],
-        "highlights": [
-          "360 customer view",
-          "Ticket tracking by priority",
-          "Renewal alerts"
+        "summary": "Developed a platform focused on managing existing customers, enabling commercial follow-up, renewal tracking, interaction logging, and a complete view of each customer's commercial history.",
+        "role": "UI Design, Full Stack Development, QA, and Deployment.",
+        "stack": [
+          "React",
+          "TypeScript",
+          "Charts",
+          "REST API"
         ],
-        "moreImages": ["/projects/spotify-clone/main.png"]
+        "highlights": [
+          "Data version control for efficient synchronization.",
+          "Significant query reduction through local caching strategies.",
+          "360-degree customer history view.",
+          "Renewal tracking and customer retention workflows.",
+          "Commercial interaction and activity logging.",
+          "Advanced customer segmentation filters.",
+          "Caching system to reduce repetitive database requests.",
+          "Operational reporting and performance metrics."
+        ],
+        "moreImages": [
+          "/projects/spotify-clone/main.png"
+        ]
       }
     },
     {
       "slug": "multi-salon-management",
-      "title": "Multi-salon management",
-      "description": "App to coordinate branches, scheduling, inventory, and sales across multiple salons.",
+      "title": "Multi-Salon Management System",
+      "description": "Management platform designed to coordinate branches, appointments, sales, and cash register operations across multiple beauty salons.",
       "company": "Private Chain C",
       "showCompany": true,
       "showImages": true,
@@ -176,17 +217,30 @@
       "codeLabel": "",
       "link": "",
       "image": "/netflix.png",
-      "images": ["/netflix.png", "/pep.png"],
+      "images": [
+        "/netflix.png",
+        "/pep.png"
+      ],
       "detail": {
-        "summary": "Unifies operations across branches with appointment, cash, and inventory control.",
-        "role": "Frontend, module integration, and usability testing.",
-        "stack": ["React", "TypeScript", "Tailwind", "Calendar"],
-        "highlights": [
-          "Centralized scheduling per branch",
-          "Inventory control per salon",
-          "Daily sales reports"
+        "summary": "Management system designed to centralize daily salon operations, including service administration, sales tracking, cash register closing, operational expenses, and financial reporting from a single platform.",
+        "role": "Frontend Development, Module Integration, QA, and Deployment.",
+        "stack": [
+          "React",
+          "TypeScript",
+          "Tailwind",
+          "Calendar"
         ],
-        "moreImages": ["/projects/spotify-clone/details1.png"]
+        "highlights": [
+          "Management of services performed by stylists.",
+          "Sales tracking by employee.",
+          "Cash register opening and closing workflows.",
+          "Income and operational expense tracking.",
+          "Daily, weekly, and monthly reporting.",
+          "Integrated calendar for appointment scheduling and management."
+        ],
+        "moreImages": [
+          "/projects/spotify-clone/details1.png"
+        ]
       }
     },
     {
@@ -201,24 +255,34 @@
       "codeLabel": "",
       "link": "",
       "image": "/projects/spotify-clone/details2.png",
-      "images": ["/projects/spotify-clone/details2.png", "/netflix.png"],
+      "images": [
+        "/projects/spotify-clone/details2.png",
+        "/netflix.png"
+      ],
       "detail": {
         "summary": "Integrates key processes with financial dashboards and inventory control.",
         "role": "Frontend, screen definition, and validations.",
-        "stack": ["React", "TypeScript", "Tailwind", "REST API"],
+        "stack": [
+          "React",
+          "TypeScript",
+          "Tailwind",
+          "REST API"
+        ],
         "highlights": [
           "Purchasing and suppliers flow",
           "Inventory movements and kardex",
           "Basic financial reports"
         ],
-        "moreImages": ["/pep.png"]
+        "moreImages": [
+          "/pep.png"
+        ]
       }
     }
   ],
   "ABOUT": {
-    "p1": "I’m a frontend developer with solid experience building modern interfaces using React, TypeScript, and design tools like Figma. I stand out for my quick learning ability and adaptability to new technologies proven by my successful work with cloud services like GCP and AWS without prior experience.",
-    "p2": "I’ve contributed to large-scale platform development alongside multidisciplinary teams using agile methodologies, always prioritizing user experience and code quality. While frontend is my main focus, I’ve also taken on backend tasks such as building APIs with Node.js, demonstrating my versatility and commitment to product goals.",
-    "p3": "I'm constantly learning and working on personal projects, exploring technologies like Astro, Firebase, and Tailwind CSS. I'm eager to continue growing as a developer by building functional, scalable, and user-centered digital products."
+    "p1": "I am a Frontend & Full Stack Developer specialized in business applications and management platforms.",
+    "p2": "Over the last few years, I have participated in the design and development of systems for sales operations, customer management, business processes, and administrative control, primarily working with React, TypeScript, Astro, and Firebase.",
+    "p3": "Beyond building modern user interfaces, I focus on performance and scalability by implementing caching strategies, data version control, and query optimization techniques that reduce operational costs and improve user experience. I also collaborate directly with clients to define requirements, design workflows, and transform business needs into functional digital products."
   },
   "CERTIFICATES_TEXT": [
     {
