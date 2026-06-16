@@ -1,22 +1,43 @@
 ---
-const lang = Astro.cookies.get("lang")?.value || "en"
-const nextLang = lang === "es" ? "en" : "es"
-const flagSrc = nextLang === "es" ? "/icons/flags/usa.svg" : "/icons/flags/colombia.svg"
-const alt = nextLang === "en" ? "Switch to English" : "Cambiar a Español"
+const lang = Astro.cookies.get("lang")?.value || "en";
+const nextLang = lang === "es" ? "en" : "es";
+const flagSrc =
+  nextLang === "es" ? "/icons/flags/usa.svg" : "/icons/flags/colombia.svg";
+const alt = nextLang === "en" ? "Switch to English" : "Cambiar a Español";
 ---
 
 <button id="lang-toggle" title={alt} class="ml-4">
-  <div class="flag-circle w-6 h-6 rounded-full overflow-hidden border border-gray-400 dark:border-gray-200">
-    <img src={flagSrc} alt={alt} class="w-full h-full object-cover" loading="lazy" />
+  <div
+    class="flag-circle w-6 h-6 rounded-full overflow-hidden border border-gray-400 dark:border-gray-200"
+  >
+    <img
+      src={flagSrc}
+      alt={alt}
+      class="w-full h-full object-cover"
+      loading="lazy"
+    />
   </div>
 </button>
 
 <script is:inline>
-  const toggle = document.getElementById("lang-toggle")
-  toggle?.addEventListener("click", () => {
-    const currentLang = document.cookie.includes("lang=es") ? "es" : "en"
-    const nextLang = currentLang === "es" ? "en" : "es"
-    document.cookie = `lang=${nextLang}; path=/; max-age=31536000`
-    window.location.href = window.location.pathname
-  })
+  document.addEventListener("astro:page-load", () => {
+    const toggle = document.getElementById("lang-toggle");
+
+    if (!toggle) return;
+
+    toggle.onclick = () => {
+      const currentLang =
+        document.cookie
+          .split("; ")
+          .find((row) => row.startsWith("lang="))
+          ?.split("=")[1] || "en";
+
+      const nextLang = currentLang === "es" ? "en" : "es";
+
+      document.cookie =
+        `lang=${nextLang}; path=/; max-age=31536000`;
+
+      window.location.reload();
+    };
+  });
 </script>

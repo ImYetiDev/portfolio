@@ -7,29 +7,13 @@ import LinkButton from "./LinkButton.astro";
 
 import en from "../language/en.json";
 import es from "../language/es.json";
+import { TAGS } from "@/data/tags";
 
 const lang = Astro.cookies.get("lang")?.value || "en";
 const t = lang === "es" ? es.PROJECTS : en.PROJECTS;
 const more = lang === "es" ? es.INDEX.seeAllProjects : en.INDEX.seeAllProjects;
 
-// Iconos y estilos no se traducen, así que se mantienen aquí
-const TAGS = {
-  REACT: {
-    name: "React",
-    class: "bg-blue-500 text-white",
-    icon: NextJS,
-  },
-  TAILWIND: {
-    name: "Tailwind CSS",
-    class: "bg-[#f29f5f] text-white",
-    icon: Tailwind,
-  },
-  GOOGLE_API: {
-    name: "Google API",
-    class: "bg-[#4285F4] text-white",
-    icon: Tailwind,
-  },
-};
+
 
 // Convertimos los tags del JSON en objetos completos
 const PROJECTS = t.map((project) => ({

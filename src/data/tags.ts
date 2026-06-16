@@ -21,7 +21,7 @@ export const TAGS = {
   },
 
   TAILWIND: {
-    name: "Tailwind CSS",
+    name: "Tailwind",
     class: "bg-sky-500 text-white",
     icon: Tailwind,
   },

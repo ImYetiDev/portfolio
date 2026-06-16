@@ -95,7 +95,10 @@
       "image": "/netflix.png",
       "tags": [
         "REACT",
-        "TAILWIND"
+        "NETLIFY",
+        "ASTRO",
+        "TAILWIND",
+        "FIREBASE"
       ]
     },
     {
@@ -106,7 +109,10 @@
       "image": "/pep.png",
       "tags": [
         "REACT",
-        "TAILWIND"
+        "NETLIFY",
+        "ASTRO",
+        "TAILWIND",
+        "FIREBASE"
       ]
     }
   ],
@@ -130,7 +136,7 @@
       "slug": "crm-company-a",
       "title": "Sales & Customer Management CRM",
       "description": "CRM platform designed to manage leads, customers, and sales opportunities. Focused on sales teams operating through multiple pipeline stages and performance reporting.",
-      "company": "Private Company A",
+      "company": "Private Company",
       "showCompany": true,
       "showImages": true,
       "showCode": false,
@@ -149,7 +155,9 @@
           "REACT",
           "TYPESCRIPT",
           "TAILWIND",
-          "REST API"
+          "FIRESTORE_REST",
+          "FIRESTORE_SDK",
+          "NETLIFY"
         ],
         "highlights": [
           "Data version control for efficient synchronization.",
@@ -187,7 +195,10 @@
         "stack": [
           "REACT",
           "TYPESCRIPT",
-          "REST API"
+          "TAILWIND",
+          "FIRESTORE_REST",
+          "FIRESTORE_SDK",
+          "NETLIFY"
         ],
         "highlights": [
           "Data version control for efficient synchronization.",
@@ -225,9 +236,10 @@
         "role": "Frontend Development, Module Integration, QA, and Deployment.",
         "stack": [
           "REACT",
-          "TYPESCRIPT",
+          "NETLIFY",
+          "ASTRO",
           "TAILWIND",
-          "CALENDAR"
+          "FIREBASE"
         ],
         "highlights": [
           "Management of services performed by stylists.",
@@ -241,41 +253,6 @@
           "/projects/spotify-clone/details1.png"
         ]
       }
-    },
-    {
-      "slug": "private-client-erp",
-      "title": "ERP for a private client",
-      "description": "ERP for purchasing, inventory, sales, and financial reporting.",
-      "company": "Private Client D",
-      "showCompany": true,
-      "showImages": true,
-      "showCode": false,
-      "codeUrl": "",
-      "codeLabel": "",
-      "link": "",
-      "image": "/projects/spotify-clone/details2.png",
-      "images": [
-        "/projects/spotify-clone/details2.png",
-        "/netflix.png"
-      ],
-      "detail": {
-        "summary": "Integrates key processes with financial dashboards and inventory control.",
-        "role": "Frontend, screen definition, and validations.",
-        "stack": [
-          "REACT",
-          "TYPESCRIPT",
-          "TAILWIND",
-          "REST API"
-        ],
-        "highlights": [
-          "Purchasing and suppliers flow",
-          "Inventory movements and kardex",
-          "Basic financial reports"
-        ],
-        "moreImages": [
-          "/pep.png"
-        ]
-      }
     }
   ],
   "ABOUT": {
@@ -285,7 +262,7 @@
   },
   "CERTIFICATES_TEXT": [
     {
-      "All": "Desarrollo Web Frontend",
+      "All": "Frontend Web Development",
       "Certificates": "asdf"
     }
   ]

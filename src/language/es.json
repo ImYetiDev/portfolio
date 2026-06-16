@@ -95,7 +95,10 @@
       "image": "/netflix.png",
       "tags": [
         "REACT",
-        "TAILWIND"
+        "NETLIFY",
+        "ASTRO",
+        "TAILWIND",
+        "FIREBASE"
       ]
     },
     {
@@ -106,7 +109,10 @@
       "image": "/pep.png",
       "tags": [
         "REACT",
-        "TAILWIND"
+        "NETLIFY",
+        "ASTRO",
+        "TAILWIND",
+        "FIREBASE"
       ]
     }
   ],
@@ -127,7 +133,7 @@
   },
   "SOLD_PRODUCTS": [
     {
-      "slug": "crm-empresa-a",
+      "slug": "crm-company-a",
       "title": "CRM Comercial para Gestión de Ventas y Clientes",
       "description": "CRM para gestionar clientes, oportunidades y pipeline comercial. Enfocado en equipos de ventas con multiples etapas y reportes.",
       "company": "Empresa Privada",
@@ -169,7 +175,7 @@
       }
     },
     {
-      "slug": "crm-empresa-b",
+      "slug": "crm-company-b",
       "title": "CRM de Seguimiento y Fidelización de Clientes",
       "description": "Plataforma para la gestión y seguimiento de clientes activos, enfocada en la continuidad comercial, renovaciones y control de relaciones a largo plazo.",
       "company": "Empresa Privada B",
@@ -210,7 +216,7 @@
       }
     },
     {
-      "slug": "gestion-peluquerias",
+      "slug": "multi-salon-management",
       "title": "Gestion multi-peluquerias",
       "description": "Aplicacion para coordinar sucursales, agenda, ventas y cierres de caja en varias peluquerias.",
       "company": "Jimmy Ardila Alta Peluqueria",
@@ -255,7 +261,7 @@
   },
   "CERTIFICATES": [
     {
-      "All": "Desarrollo Web Frontend",
+      "All": "Frontend Web Development",
       "Certificates": "asdf"
     }
   ]
