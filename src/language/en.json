@@ -92,7 +92,7 @@
       "description": "A Netflix clone built with Astro, Tailwind CSS, and TypeScript. Features a responsive design and dynamic content loading to mimic the Netflix experience.",
       "link": "https://netflux-clon.netlify.app/",
       "github": "https://github.com/ImYetiDev/clon-netflix",
-      "image": "/netflix.png",
+      "image": "/netflix.avif",
       "tags": [
         "REACT",
         "NETLIFY",
@@ -106,7 +106,7 @@
       "description": "An internal platform for Globant to manage events and display metrics more efficiently. Built with React for dynamic user interaction.",
       "link": "https://people-events-platform.web.app/",
       "github": "",
-      "image": "/pep.png",
+      "image": "/pep.avif",
       "tags": [
         "REACT",
         "NETLIFY",
@@ -143,10 +143,12 @@
       "codeUrl": "",
       "codeLabel": "",
       "link": "",
-      "image": "/projects/spotify-clone/main.png",
+      "image": "/projects/sold-products/crm/cargaMasivaCompleta.avif",
       "images": [
-        "/projects/spotify-clone/details1.png",
-        "/projects/spotify-clone/details2.png"
+        "/projects/sold-products/crm/editarCliente.avif",
+        "/projects/sold-products/crm/cargaMasiva.avif",
+        "/projects/sold-products/crm/buscador.avif",
+        "/projects/sold-products/crm/adminClientes.avif"
       ],
       "detail": {
         "summary": "Developed a sales CRM focused on lead management, customer tracking, and sales opportunities. The platform manages the complete sales cycle from first contact to deal closure, including stage tracking, agent assignment, performance reporting, and operational metrics for commercial teams.",
@@ -168,9 +170,6 @@
           "Advanced filtering tools for commercial teams.",
           "Performance and status reporting dashboards.",
           "Architecture optimized to handle large datasets."
-        ],
-        "moreImages": [
-          "/netflix.png"
         ]
       }
     },
@@ -185,9 +184,12 @@
       "codeUrl": "",
       "codeLabel": "",
       "link": "",
-      "image": "/pep.png",
+      "image": "/projects/sold-products/crm/cargaMasiva.avif",
       "images": [
-        "/pep.png"
+        "/projects/sold-products/crm/editarCliente.avif",
+        "/projects/sold-products/crm/cargaMasiva.avif",
+        "/projects/sold-products/crm/buscador.avif",
+        "/projects/sold-products/crm/adminClientes.avif"
       ],
       "detail": {
         "summary": "Developed a platform focused on managing existing customers, enabling commercial follow-up, renewal tracking, interaction logging, and a complete view of each customer's commercial history.",
@@ -209,9 +211,6 @@
           "Advanced customer segmentation filters.",
           "Caching system to reduce repetitive database requests.",
           "Operational reporting and performance metrics."
-        ],
-        "moreImages": [
-          "/projects/spotify-clone/main.png"
         ]
       }
     },
@@ -226,10 +225,12 @@
       "codeUrl": "",
       "codeLabel": "",
       "link": "",
-      "image": "/netflix.png",
+      "image": "/projects/sold-products/peluqueria/cierre.avif",
       "images": [
-        "/netflix.png",
-        "/pep.png"
+        "/projects/sold-products/peluqueria/caja.avif",
+        "/projects/sold-products/peluqueria/calendario.avif",
+        "/projects/sold-products/peluqueria/login.avif",
+        "/projects/sold-products/peluqueria/servicios.avif"
       ],
       "detail": {
         "summary": "Management system designed to centralize daily salon operations, including service administration, sales tracking, cash register closing, operational expenses, and financial reporting from a single platform.",
@@ -248,9 +249,6 @@
           "Income and operational expense tracking.",
           "Daily, weekly, and monthly reporting.",
           "Integrated calendar for appointment scheduling and management."
-        ],
-        "moreImages": [
-          "/projects/spotify-clone/details1.png"
         ]
       }
     }
