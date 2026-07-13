@@ -4,6 +4,7 @@ import Badge from "@/components/Badge.astro"
 import LinkedInIcon from "@/components/icons/LinkedIn.astro"
 import MailIcon from "@/components/icons/Mail.astro"
 import SocialPill from "@/components/SocialPill.astro"
+import GitHub from "@/components/icons/GitHub.astro"
 
 interface Props {
   title: string
@@ -44,13 +45,17 @@ const info = lang === "es" ? es.HERO : en.HERO
     { info.description }
   </p>
   <nav class="flex flex-wrap gap-4 mt-8">
-    <SocialPill href="mailto:imyeti479@gmail.com">  <!-- Asegúrate de poner tu email -->
+    <SocialPill href="mailto:imyeti479@gmail.com">
       <MailIcon class="size-4" />
       { info.contact }
     </SocialPill>
     <SocialPill href="https://github.com/ImYetiDev">
-      <LinkedInIcon class="size-4" />
+      <GitHub class="size-4" />
       Github
+    </SocialPill>
+    <SocialPill href="https://www.linkedin.com/in/david-stiven-uribe-z/">
+      <LinkedInIcon class="size-4" />
+      LinkedIn
     </SocialPill>
   </nav>
 </div>
