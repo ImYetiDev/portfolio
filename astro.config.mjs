@@ -8,7 +8,4 @@ export default defineConfig({
   site: 'https://portfolio-david-uribe.netlify.app/',
   output: 'server',
   adapter: netlify(),
-  experimental: {
-    session: true,  // Habilita la configuración experimental de sesiones
-  },
 });
