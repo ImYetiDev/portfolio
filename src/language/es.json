@@ -88,31 +88,47 @@
   ],
   "PROJECTS": [
     {
-      "title": "Clon de Netflix",
-      "description": "Un clon de Netflix construido con Astro, Tailwind CSS y TypeScript. Cuenta con un diseño responsivo y carga dinámica de contenido para imitar la experiencia de Netflix.",
-      "link": "https://netflux-clon.netlify.app/",
-      "github": "https://github.com/ImYetiDev/clon-netflix",
-      "images": ["/netflix.avif"],
+      "title": "React Fundamentals Lab",
+      "description": "Laboratorio activo de React donde desarrollo pequeños ejercicios e implementaciones para fortalecer mi comprensión de los fundamentos de React, comportamiento de componentes, manejo de estado, efectos, hooks, renderizado y patrones comunes de frontend.",
+      "link": "",
+      "github": "https://github.com/ImYetiDev/react-fundamentals-lab",
+      "images": [
+        "/projects/react-fundamentals/react-fundamentals.avif"
+      ],
       "tags": [
         "REACT",
-        "NETLIFY",
-        "ASTRO",
-        "TAILWIND",
-        "FIREBASE"
+        "TYPESCRIPT",
+        "TAILWIND"
       ]
     },
     {
-      "title": "Plataforma de Eventos para Personas de Globant",
-      "description": "Una plataforma interna de Globant para gestionar eventos y visualizar métricas de manera más eficiente. Construida con React para una interacción dinámica con el usuario.",
-      "link": "https://people-events-platform.web.app/",
-      "github": "",
-      "images": ["/pep.avif"],
+      "title": "Netflix Clone",
+      "description": "Aplicación inspirada en Netflix desarrollada para practicar desarrollo frontend moderno, interfaces responsivas, componentes reutilizables y consumo dinámico de información de películas mediante una API externa.",
+      "link": "https://netflux-clon.netlify.app/",
+      "github": "https://github.com/ImYetiDev/clon-netflix",
+      "images": [
+        "/netflix.avif"
+      ],
+      "tags": [
+        "ASTRO",
+        "REACT",
+        "TYPESCRIPT",
+        "TAILWIND",
+        "NETLIFY"
+      ]
+    },
+    {
+      "title": "Spotify Clone",
+      "description": "Aplicación inspirada en Spotify desarrollada como uno de mis primeros proyectos de aprendizaje con React. Me permitió practicar el consumo de APIs, componentes reutilizables, manejo de estado, desarrollo de interfaces responsivas y los fundamentos para construir y desplegar una aplicación con React.",
+      "link": "https://clon-spotifi.netlify.app/",
+      "github": "https://github.com/ImYetiDev/clon-spotify",
+      "images": [
+        "/projects/spotify/spotify.avif"
+      ],
       "tags": [
         "REACT",
-        "NETLIFY",
-        "ASTRO",
         "TAILWIND",
-        "FIREBASE"
+        "NETLIFY"
       ]
     }
   ],
@@ -225,8 +241,8 @@
       "codeUrl": "",
       "codeLabel": "",
       "link": "",
-      "image": "/projects/sold-products/peluqueria/cierre.avif",
       "images": [
+        "/projects/sold-products/peluqueria/cierre.avif",
         "/projects/sold-products/peluqueria/caja.avif",
         "/projects/sold-products/peluqueria/calendario.avif",
         "/projects/sold-products/peluqueria/login.avif",
@@ -249,6 +265,37 @@
           "Registro de ingresos y gastos operativos.",
           "Reportes diarios, semanales y mensuales.",
           "Calendario para programación y seguimiento de citas."
+        ]
+      }
+    },
+    {
+      "slug": "globant-people-events-platform",
+      "title": "Globant People Events Platform",
+      "description": "Plataforma interna de gestión de eventos utilizada en Globant, donde contribuí como Frontend Developer implementando funcionalidades para los usuarios e integrando interfaces desarrolladas en React con servicios de Firebase.",
+      "company": "Globant",
+      "showCompany": true,
+      "showImages": true,
+      "showCode": false,
+      "codeUrl": "",
+      "codeLabel": "",
+      "link": "https://people-events-platform.web.app/",
+      "images": [
+        "/pep.avif"
+      ],
+      "detail": {
+        "summary": "Contribuí al desarrollo de la plataforma interna People Events Platform de Globant como parte de un equipo de desarrollo. Mi trabajo se enfocó en la implementación frontend utilizando React, la integración de interfaces con servicios de Firebase y el desarrollo de funcionalidades basadas en requerimientos y diseños definidos para la experiencia de gestión de eventos.",
+        "role": "Frontend Developer.",
+        "stack": [
+          "REACT",
+          "FIREBASE"
+        ],
+        "highlights": [
+          "Implementé funcionalidades frontend en React siguiendo requerimientos, casos de uso y diseños definidos.",
+          "Integré componentes y flujos de la aplicación desarrollados en React con servicios de Firebase.",
+          "Contribuí a la implementación del calendario de eventos y las interfaces relacionadas con la gestión de eventos.",
+          "Trabajé en flujos de la aplicación relacionados con la autenticación de usuarios.",
+          "Participé en reuniones de equipo, discusiones de requerimientos y coordinación del desarrollo.",
+          "Colaboré con otros desarrolladores como parte del flujo de desarrollo del producto."
         ]
       }
     }

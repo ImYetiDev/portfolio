@@ -88,31 +88,47 @@
   ],
   "PROJECTS": [
     {
-      "title": "Globant People Events Platform",
-      "description": "An internal platform for Globant to manage events and display metrics more efficiently. Built with React for dynamic user interaction.",
-      "link": "https://people-events-platform.web.app/",
+      "title": "React Fundamentals Lab",
+      "description": "An ongoing React laboratory where I build small exercises and implementations to strengthen my understanding of React fundamentals, component behavior, state management, effects, hooks, rendering, and common frontend patterns.",
+      "link": "",
       "github": "",
-      "images": ["/pep.avif"],
+      "images": [
+        "/projects/react-fundamentals/react-fundamentals.avif"
+      ],
       "tags": [
         "REACT",
-        "NETLIFY",
-        "ASTRO",
-        "TAILWIND",
-        "FIREBASE"
+        "TYPESCRIPT",
+        "TAILWIND"
       ]
     },
     {
       "title": "Netflix Clone",
-      "description": "A Netflix clone built with Astro, Tailwind CSS, and TypeScript. Features a responsive design and dynamic content loading to mimic the Netflix experience.",
+      "description": "A Netflix-inspired application built to practice modern frontend development, responsive interfaces, reusable components, and dynamic movie data consumption through an external API.",
       "link": "https://netflux-clon.netlify.app/",
       "github": "https://github.com/ImYetiDev/clon-netflix",
-      "images": ["/netflix.avif"],
+      "images": [
+        "/netflix.avif"
+      ],
+      "tags": [
+        "ASTRO",
+        "REACT",
+        "TYPESCRIPT",
+        "TAILWIND",
+        "NETLIFY"
+      ]
+    },
+    {
+      "title": "Spotify Clone",
+      "description": "A Spotify-inspired application developed as an early React learning project. It helped me practice API consumption, reusable components, state handling, responsive UI development, and the fundamentals of building and deploying a React application.",
+      "link": "",
+      "github": "",
+      "images": [
+        "/projects/spotify/spotify.avif"
+      ],
       "tags": [
         "REACT",
-        "NETLIFY",
-        "ASTRO",
         "TAILWIND",
-        "FIREBASE"
+        "NETLIFY"
       ]
     }
   ],
@@ -249,6 +265,37 @@
           "Income and operational expense tracking.",
           "Daily, weekly, and monthly reporting.",
           "Integrated calendar for appointment scheduling and management."
+        ]
+      }
+    },
+    {
+      "slug": "globant-people-events-platform",
+      "title": "Globant People Events Platform",
+      "description": "Internal event management platform used across Globant, where I contributed as a Frontend Developer implementing user-facing features and integrating React interfaces with Firebase services.",
+      "company": "Globant",
+      "showCompany": true,
+      "showImages": true,
+      "showCode": false,
+      "codeUrl": "",
+      "codeLabel": "",
+      "link": "https://people-events-platform.web.app/",
+      "images": [
+        "/pep.avif"
+      ],
+      "detail": {
+        "summary": "Contributed to the development of Globant's internal People Events Platform as part of a development team. My work focused on frontend implementation using React, integrating interfaces with Firebase services, and developing features based on defined requirements and designs for the event management experience.",
+        "role": "Frontend Developer.",
+        "stack": [
+          "REACT",
+          "FIREBASE"
+        ],
+        "highlights": [
+          "Implemented frontend features in React following defined requirements, use cases, and designs.",
+          "Integrated React components and application flows with Firebase services.",
+          "Contributed to the implementation of the event calendar and event-related user interfaces.",
+          "Worked on authentication-related application flows.",
+          "Participated in team meetings, requirement discussions, and development coordination.",
+          "Collaborated with other developers as part of the product development workflow."
         ]
       }
     }

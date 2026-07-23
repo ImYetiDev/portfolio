@@ -1,7 +1,7 @@
 import GitHub from "@/components/icons/GitHub.astro";
 import React from "@/components/icons/React.astro";
 import Tailwind from "@/components/icons/Tailwind.astro";
-
+import TypeScript from "@/components/icons/TypeScript.astro";
 import AstroIcon from "@/components/icons/Astro.astro";
 import Netlify from "@/components/icons/Netlify.astro";
 import Firebase from "@/components/icons/Firebase.astro";
@@ -54,5 +54,11 @@ export const TAGS = {
     name: "GitHub",
     class: "bg-black text-white",
     icon: GitHub,
+  },
+
+  TYPESCRIPT: {
+    name: "TypeScript",
+    class: "bg-blue-600 text-white",
+    icon: TypeScript,
   },
 } as const;
