@@ -1,0 +1,78 @@
+---
+interface Props {
+  images: string[];
+  alt: string;
+  interval?: number;
+}
+
+const {
+  images,
+  alt,
+  interval = 4000,
+} = Astro.props;
+---
+
+<div
+  class="auto-image-slider relative w-full h-56 sm:h-full overflow-hidden"
+  data-auto-slider
+  data-interval={interval}
+>
+  {
+    images.map((image, index) => (
+      <img
+        src={image}
+        alt={`${alt} - ${index + 1}`}
+        loading="lazy"
+        data-slide
+        class:list={[
+          "absolute inset-0 object-cover object-top w-full h-full transition-opacity duration-700",
+          index === 0 ? "opacity-100" : "opacity-0",
+        ]}
+      />
+    ))
+  }
+</div>
+
+<script>
+  function initializeSliders() {
+    const sliders = document.querySelectorAll<HTMLElement>(
+      "[data-auto-slider]:not([data-slider-initialized])"
+    );
+
+    sliders.forEach((slider) => {
+      slider.dataset.sliderInitialized = "true";
+
+      const slides =
+        slider.querySelectorAll<HTMLElement>("[data-slide]");
+
+      // Si solo hay una imagen, no necesitamos hacer nada
+      if (slides.length <= 1) return;
+
+      let currentIndex = 0;
+
+      const interval = Number(
+        slider.dataset.interval ?? 4000
+      );
+
+      setInterval(() => {
+        // Ocultamos la imagen actual
+        slides[currentIndex].classList.remove("opacity-100");
+        slides[currentIndex].classList.add("opacity-0");
+
+        // Pasamos a la siguiente
+        currentIndex = (currentIndex + 1) % slides.length;
+
+        // Mostramos la nueva
+        slides[currentIndex].classList.remove("opacity-0");
+        slides[currentIndex].classList.add("opacity-100");
+      }, interval);
+    });
+  }
+
+  initializeSliders();
+
+  document.addEventListener(
+    "astro:page-load",
+    initializeSliders
+  );
+</script>

@@ -92,7 +92,7 @@
       "description": "Un clon de Netflix construido con Astro, Tailwind CSS y TypeScript. Cuenta con un diseño responsivo y carga dinámica de contenido para imitar la experiencia de Netflix.",
       "link": "https://netflux-clon.netlify.app/",
       "github": "https://github.com/ImYetiDev/clon-netflix",
-      "image": "/netflix.avif",
+      "images": ["/netflix.avif"],
       "tags": [
         "REACT",
         "NETLIFY",
@@ -106,7 +106,7 @@
       "description": "Una plataforma interna de Globant para gestionar eventos y visualizar métricas de manera más eficiente. Construida con React para una interacción dinámica con el usuario.",
       "link": "https://people-events-platform.web.app/",
       "github": "",
-      "image": "/pep.avif",
+      "images": ["/pep.avif"],
       "tags": [
         "REACT",
         "NETLIFY",
