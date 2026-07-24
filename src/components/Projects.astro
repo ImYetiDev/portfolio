@@ -6,84 +6,156 @@ import AutoImageSlider from "./AutoImageSlider.astro";
 
 import en from "../language/en.json";
 import es from "../language/es.json";
+
 import { TAGS } from "@/data/tags";
 
 const lang = Astro.cookies.get("lang")?.value || "en";
+
 const t = lang === "es" ? es.PROJECTS : en.PROJECTS;
+
 const more = lang === "es" ? es.INDEX.seeAllProjects : en.INDEX.seeAllProjects;
 
-// Convertimos los tags del JSON en objetos completos
+const labels = {
+  details: lang === "es" ? "Ver detalles" : "View details",
+
+  code: lang === "es" ? "Código" : "Code",
+
+  demo: lang === "es" ? "Ver demo" : "Demo",
+};
+
 const PROJECTS = t.map((project) => ({
   ...project,
-  tags: project.tags.map((key) => TAGS[key as keyof typeof TAGS]),
+
+  tags: project.tags
+    .map((key) => TAGS[key as keyof typeof TAGS])
+    .filter(Boolean),
 }));
 ---
 
 <div class="flex flex-col gap-y-16">
   {
-    PROJECTS.map(({ images, title, description, tags, link, github }) => (
-      <article class=" flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-        <a class="w-full md:w-1/2" href={link} target="_blank" rel="noopener">
-          <div
-            class="relative h-56 sm:h-64 md:h-72
-           transition duration-500 ease-in-out transform
-           shadow-xl overflow-hidden rounded-xl
-           md:group-hover:-translate-y-1
-           md:group-hover:shadow-2xl
-           lg:border lg:border-gray-800
-           lg:hover:border-gray-700
-           lg:hover:bg-gray-800/50"
+    PROJECTS.map(({ slug, images, title, description, tags, link, github }) => {
+      /*
+       * Si existe demo, la imagen abre el demo.
+       * Si no existe demo, abre la vista detallada.
+       */
+      const imageHref = link || `/projects/${slug}`;
+
+      const imageIsExternal = Boolean(link);
+
+      return (
+        <article
+          class="group flex flex-col
+                   space-x-0 space-y-8
+                   md:flex-row
+                   md:space-x-8 md:space-y-0"
+        >
+          <a
+            class="w-full md:w-1/2"
+            href={imageHref}
+            target={imageIsExternal ? "_blank" : undefined}
+            rel={imageIsExternal ? "noopener noreferrer" : undefined}
+            aria-label={
+              imageIsExternal
+                ? `${labels.demo}: ${title}`
+                : `${labels.details}: ${title}`
+            }
           >
-            <AutoImageSlider images={images} alt={title} />
-          </div>
-        </a>
+            <div
+              class="relative h-56 overflow-hidden
+                       rounded-xl shadow-xl
+                       transition duration-500 ease-in-out
+                       sm:h-64 md:h-72
+                       md:group-hover:-translate-y-1
+                       md:group-hover:shadow-2xl
+                       lg:border lg:border-gray-800
+                       lg:hover:border-gray-700
+                       lg:hover:bg-gray-800/50"
+            >
+              <AutoImageSlider images={images} alt={title} />
+            </div>
+          </a>
 
-        <div class="w-full md:w-1/2 md:max-w-lg">
-          <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
-            {title}
-          </h3>
-          <div class="flex flex-wrap mt-2">
-            <ul class="flex flex-row mb-2 gap-x-2">
-              {tags.map((tag) => (
-                <li>
-                  <span
-                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
-                  >
-                    <tag.icon class="size-4" />
-                    {tag.name}
-                  </span>
-                </li>
-              ))}
-            </ul>
+          <div
+            class="flex w-full flex-col
+                     md:w-1/2 md:max-w-lg"
+          >
+            <h3
+              class="text-2xl font-bold
+                       text-gray-800
+                       dark:text-gray-100"
+            >
+              {title}
+            </h3>
 
-            <div class="mt-2 text-gray-700 dark:text-gray-400">
+            <div class="mt-2 flex flex-wrap">
+              <ul
+                class="mb-2 flex
+                         flex-row flex-wrap gap-2"
+              >
+                {tags.map((tag) => (
+                  <li>
+                    <span
+                      class={`flex gap-x-2
+                                rounded-full
+                                px-2 py-1 text-xs
+                                ${tag.class}`}
+                    >
+                      <tag.icon class="size-4" />
+
+                      {tag.name}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div
+              class="mt-2 text-gray-700
+                       dark:text-gray-400"
+            >
               {description}
             </div>
-            <footer class="flex items-end justify-start mt-4 gap-x-4">
-              {github && (
-                <LinkButton href={github}>
-                  <GitHub class="size-6" />
-                  Code
+
+            <footer
+              class="mt-4 flex flex-wrap
+                       items-end justify-start
+                       gap-3"
+            >
+              {slug && (
+                <LinkButton href={`/projects/${slug}`}>
+                  <Link class="size-4" />
+                  {labels.details}
                 </LinkButton>
               )}
+
+              {github && (
+                <LinkButton href={github}>
+                  <GitHub class="size-5" />
+                  {labels.code}
+                </LinkButton>
+              )}
+
               {link && (
                 <LinkButton href={link}>
                   <Link class="size-4" />
-                  Preview
+                  {labels.demo}
                 </LinkButton>
               )}
             </footer>
           </div>
-        </div>
-      </article>
-    ))
+        </article>
+      );
+    })
   }
 
   <div class="mt-6 text-center">
     <a
       href="/projects"
-      onclick="window.location.href='/projects'"
-      class="inline-block px-6 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition"
+      class="inline-block rounded-lg
+             bg-blue-600 px-6 py-2
+             text-white transition
+             hover:bg-blue-700"
     >
       {more || "Ver todos los proyectos"}
     </a>

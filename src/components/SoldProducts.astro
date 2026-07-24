@@ -8,84 +8,212 @@ import en from "../language/en.json";
 import es from "../language/es.json";
 
 const lang = Astro.cookies.get("lang")?.value || "en";
-const t = lang === "es" ? es.SOLD_PRODUCTS : en.SOLD_PRODUCTS;
+
+const t =
+  lang === "es"
+    ? es.SOLD_PRODUCTS
+    : en.SOLD_PRODUCTS;
+
 const labels =
-  lang === "es" ? es.SOLD_PRODUCTS_LABELS : en.SOLD_PRODUCTS_LABELS;
+  lang === "es"
+    ? es.SOLD_PRODUCTS_LABELS
+    : en.SOLD_PRODUCTS_LABELS;
+
+const buttonLabels = {
+  details:
+    lang === "es"
+      ? "Ver detalles"
+      : "View details",
+
+  code:
+    lang === "es"
+      ? "Código"
+      : "Code",
+
+  demo:
+    lang === "es"
+      ? "Ver demo"
+      : "Demo",
+
+  seeAll:
+    lang === "es"
+      ? "Ver todos los productos"
+      : "View all products",
+};
 ---
 
 <div class="flex flex-col gap-y-16">
   {
-    t.map((product) => (
-      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-        <div class="w-full md:w-1/2">
-          {product.showImages ? (
-            <a
-              href={`/productos-vendidos/${product.slug}`}
-              class="block w-full"
-            >
-              <div class="relative h-56 sm:h-64 md:h-72 transition duration-500 ease-in-out transform shadow-xl overflow-hidden rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-                <AutoImageSlider images={product.images} alt={product.title} />
-              </div>
-            </a>
-          ) : (
-            <div class="flex items-center justify-center h-56 rounded-xl border border-gray-300 bg-gray-100 text-gray-600">
-              {labels.imagesPrivate}
-            </div>
-          )}
-        </div>
+    t.map((product) => {
+      /*
+       * Si existe demo, la imagen abre el demo.
+       * Si no existe demo, abre la vista detallada.
+       */
+      const imageHref =
+        product.link ||
+        `/productos-vendidos/${product.slug}`;
 
-        <div class="w-full md:w-1/2 md:max-w-lg">
-          <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
-            {product.title}
-          </h3>
-          <div class="mt-2 text-gray-700 dark:text-gray-400">
-            {product.description}
-          </div>
+      const imageIsExternal =
+        Boolean(product.link);
 
-          <div class="mt-3 flex flex-wrap gap-2 text-sm text-gray-600 dark:text-gray-400">
-            {product.showCompany ? (
-              <span>
-                {labels.company}: {product.company}
-              </span>
+      return (
+        <article
+          class="group flex flex-col
+                 space-x-0 space-y-8
+                 md:flex-row
+                 md:space-x-8 md:space-y-0"
+        >
+          <div class="w-full md:w-1/2">
+            {product.showImages ? (
+              <a
+                href={imageHref}
+                class="block w-full"
+                target={
+                  imageIsExternal
+                    ? "_blank"
+                    : undefined
+                }
+                rel={
+                  imageIsExternal
+                    ? "noopener noreferrer"
+                    : undefined
+                }
+                aria-label={
+                  imageIsExternal
+                    ? `${buttonLabels.demo}: ${product.title}`
+                    : `${buttonLabels.details}: ${product.title}`
+                }
+              >
+                <div
+                  class="relative h-56 overflow-hidden
+                         rounded-xl shadow-xl
+                         transition duration-500 ease-in-out
+                         sm:h-64 md:h-72
+                         md:group-hover:-translate-y-1
+                         md:group-hover:shadow-2xl
+                         lg:border lg:border-gray-800
+                         lg:hover:border-gray-700
+                         lg:hover:bg-gray-800/50"
+                >
+                  <AutoImageSlider
+                    images={product.images || []}
+                    alt={product.title}
+                  />
+                </div>
+              </a>
             ) : (
-              <span>{labels.companyPrivate}</span>
-            )}
-            {!product.showCode && (
-              <span class="rounded-full bg-gray-200 px-2 py-1 text-xs text-gray-700">
-                {labels.codePrivate}
-              </span>
+              <div
+                class="flex h-56 items-center
+                       justify-center rounded-xl
+                       border border-gray-300
+                       bg-gray-100 px-6
+                       text-center text-gray-600
+                       sm:h-64 md:h-72
+                       dark:border-gray-700
+                       dark:bg-gray-900
+                       dark:text-gray-400"
+              >
+                {labels.imagesPrivate}
+              </div>
             )}
           </div>
 
-          <footer class="flex items-end justify-start mt-4 gap-x-4">
-            <LinkButton href={`/productos-vendidos/${product.slug}`}>
-              <Link class="size-4" />
-              {labels.details}
-            </LinkButton>
-            {product.showCode && product.codeUrl && (
-              <LinkButton href={product.codeUrl}>
-                <GitHub class="size-6" />
-                {product.codeLabel || labels.code}
-              </LinkButton>
-            )}
-            {product.link && (
-              <LinkButton href={product.link}>
-                <Link class="size-4" />
-                {labels.preview}
-              </LinkButton>
-            )}
-          </footer>
-        </div>
-      </article>
-    ))
+          <div
+            class="flex w-full flex-col
+                   md:w-1/2 md:max-w-lg"
+          >
+            <h3
+              class="text-2xl font-bold
+                     text-gray-800
+                     dark:text-gray-100"
+            >
+              {product.title}
+            </h3>
+
+            <div
+              class="mt-2 text-gray-700
+                     dark:text-gray-400"
+            >
+              {product.description}
+            </div>
+
+            <div
+              class="mt-3 flex flex-wrap
+                     items-center gap-2
+                     text-sm text-gray-600
+                     dark:text-gray-400"
+            >
+              {product.showCompany ? (
+                <span>
+                  {labels.company}: {product.company}
+                </span>
+              ) : (
+                <span>
+                  {labels.companyPrivate}
+                </span>
+              )}
+
+              {!product.showCode && (
+                <span
+                  class="rounded-full
+                         bg-gray-200 px-2 py-1
+                         text-xs text-gray-700
+                         dark:bg-gray-800
+                         dark:text-gray-300"
+                >
+                  {labels.codePrivate}
+                </span>
+              )}
+            </div>
+
+            <footer
+              class="mt-4 flex flex-wrap
+                     items-end justify-start
+                     gap-3"
+            >
+              {product.slug && (
+                <LinkButton
+                  href={`/productos-vendidos/${product.slug}`}
+                >
+                  <Link class="size-4" />
+                  {buttonLabels.details}
+                </LinkButton>
+              )}
+
+              {product.showCode &&
+                product.codeUrl && (
+                  <LinkButton
+                    href={product.codeUrl}
+                  >
+                    <GitHub class="size-5" />
+
+                    {product.codeLabel ||
+                      buttonLabels.code}
+                  </LinkButton>
+                )}
+
+              {product.link && (
+                <LinkButton href={product.link}>
+                  <Link class="size-4" />
+                  {buttonLabels.demo}
+                </LinkButton>
+              )}
+            </footer>
+          </div>
+        </article>
+      );
+    })
   }
 
   <div class="mt-8 text-center">
     <a
       href="/productos-vendidos"
-      class="inline-block px-6 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition"
+      class="inline-block rounded-lg
+             bg-blue-600 px-6 py-2
+             text-white transition
+             hover:bg-blue-700"
     >
-      Ver todos los productos
+      {buttonLabels.seeAll}
     </a>
   </div>
 </div>

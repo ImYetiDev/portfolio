@@ -34,6 +34,7 @@ const {
                    hover:-translate-y-1 hover:shadow-xl
                    dark:border-gray-800 dark:bg-gray-900"
             data-lightbox-trigger
+            data-index={index}
             data-image={image}
             data-alt={`${title} - ${index + 1}`}
             aria-label={`${title} - ${index + 1}`}
@@ -65,7 +66,7 @@ const {
           type="button"
           data-lightbox-close
           aria-label={closeLabel}
-          class="absolute right-5 top-5 z-20
+          class="absolute right-5 top-5 z-30
                  flex h-11 w-11 items-center justify-center
                  rounded-full bg-black/60
                  text-3xl text-white
@@ -74,14 +75,66 @@ const {
           ×
         </button>
 
+        {
+          images.length > 1 && (
+            <button
+              type="button"
+              data-lightbox-prev
+              aria-label="Previous image"
+              class="absolute left-3 top-1/2 z-30
+                     flex h-12 w-12 -translate-y-1/2
+                     items-center justify-center
+                     rounded-full bg-black/60
+                     text-4xl text-white
+                     transition
+                     hover:bg-black
+                     sm:left-6 sm:h-14 sm:w-14"
+            >
+              ‹
+            </button>
+          )
+        }
+
         <img
           data-lightbox-image
           src=""
           alt=""
           class="max-h-[90vh] max-w-[95vw]
-                 rounded-xl object-contain
+                 select-none rounded-xl object-contain
                  shadow-2xl"
         />
+
+        {
+          images.length > 1 && (
+            <button
+              type="button"
+              data-lightbox-next
+              aria-label="Next image"
+              class="absolute right-3 top-1/2 z-30
+                     flex h-12 w-12 -translate-y-1/2
+                     items-center justify-center
+                     rounded-full bg-black/60
+                     text-4xl text-white
+                     transition
+                     hover:bg-black
+                     sm:right-6 sm:h-14 sm:w-14"
+            >
+              ›
+            </button>
+          )
+        }
+
+        {
+          images.length > 1 && (
+            <div
+              data-lightbox-counter
+              class="absolute bottom-5 left-1/2 z-30
+                     -translate-x-1/2
+                     rounded-full bg-black/60
+                     px-4 py-2 text-sm text-white"
+            />
+          )
+        }
       </div>
     </>
   )
@@ -100,11 +153,18 @@ const {
 
       gallery.dataset.initialized = "true";
 
-      const lightbox = gallery.nextElementSibling as HTMLElement | null;
+      const lightbox =
+        gallery.nextElementSibling as HTMLElement | null;
 
       if (!lightbox?.hasAttribute("data-lightbox")) {
         return;
       }
+
+      const triggers = Array.from(
+        gallery.querySelectorAll<HTMLElement>(
+          "[data-lightbox-trigger]"
+        )
+      );
 
       const lightboxImage =
         lightbox.querySelector<HTMLImageElement>(
@@ -116,16 +176,54 @@ const {
           "[data-lightbox-close]"
         );
 
-      if (!lightboxImage) {
+      const previousButton =
+        lightbox.querySelector<HTMLButtonElement>(
+          "[data-lightbox-prev]"
+        );
+
+      const nextButton =
+        lightbox.querySelector<HTMLButtonElement>(
+          "[data-lightbox-next]"
+        );
+
+      const counter =
+        lightbox.querySelector<HTMLElement>(
+          "[data-lightbox-counter]"
+        );
+
+      if (!lightboxImage || triggers.length === 0) {
         return;
       }
 
-      const openLightbox = (
-        image: string,
-        alt: string
-      ) => {
+      let currentIndex = 0;
+
+      const updateImage = () => {
+        const trigger = triggers[currentIndex];
+
+        if (!trigger) {
+          return;
+        }
+
+        const image = trigger.dataset.image;
+        const alt = trigger.dataset.alt ?? "";
+
+        if (!image) {
+          return;
+        }
+
         lightboxImage.src = image;
         lightboxImage.alt = alt;
+
+        if (counter) {
+          counter.textContent =
+            `${currentIndex + 1} / ${triggers.length}`;
+        }
+      };
+
+      const openLightbox = (index: number) => {
+        currentIndex = index;
+
+        updateImage();
 
         lightbox.classList.remove("hidden");
         lightbox.classList.add("flex");
@@ -145,6 +243,21 @@ const {
         document.body.style.overflow = "";
       };
 
+      const showNextImage = () => {
+        currentIndex =
+          (currentIndex + 1) % triggers.length;
+
+        updateImage();
+      };
+
+      const showPreviousImage = () => {
+        currentIndex =
+          (currentIndex - 1 + triggers.length) %
+          triggers.length;
+
+        updateImage();
+      };
+
       gallery.addEventListener("click", (event) => {
         const target = event.target as HTMLElement;
 
@@ -156,14 +269,15 @@ const {
           return;
         }
 
-        const image = trigger.dataset.image;
-        const alt = trigger.dataset.alt ?? "";
+        const index = Number(
+          trigger.dataset.index
+        );
 
-        if (!image) {
+        if (Number.isNaN(index)) {
           return;
         }
 
-        openLightbox(image, alt);
+        openLightbox(index);
       });
 
       closeButton?.addEventListener(
@@ -171,18 +285,59 @@ const {
         closeLightbox
       );
 
-      lightbox.addEventListener("click", (event) => {
-        if (event.target === lightbox) {
-          closeLightbox();
+      nextButton?.addEventListener(
+        "click",
+        (event) => {
+          event.stopPropagation();
+          showNextImage();
         }
-      });
+      );
 
-      const handleKeydown = (event: KeyboardEvent) => {
+      previousButton?.addEventListener(
+        "click",
+        (event) => {
+          event.stopPropagation();
+          showPreviousImage();
+        }
+      );
+
+      lightbox.addEventListener(
+        "click",
+        (event) => {
+          if (event.target === lightbox) {
+            closeLightbox();
+          }
+        }
+      );
+
+      const handleKeydown = (
+        event: KeyboardEvent
+      ) => {
         if (
-          event.key === "Escape" &&
-          lightbox.getAttribute("aria-hidden") === "false"
+          lightbox.getAttribute("aria-hidden") !==
+          "false"
         ) {
+          return;
+        }
+
+        if (event.key === "Escape") {
           closeLightbox();
+          return;
+        }
+
+        if (
+          event.key === "ArrowRight" &&
+          triggers.length > 1
+        ) {
+          showNextImage();
+          return;
+        }
+
+        if (
+          event.key === "ArrowLeft" &&
+          triggers.length > 1
+        ) {
+          showPreviousImage();
         }
       };
 
