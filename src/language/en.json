@@ -37,7 +37,7 @@
   ],
   "HERO": {
     "title": "Hi, I'm David Uribe",
-    "description": "Frontend & Full Stack Developer specialized in business applications and management systems. I have developed and commercialized solutions for sales, customer management, and business operations using React, Astro, TypeScript, Firebase, and performance-oriented scalable architectures. My experience includes CRM platforms for sales teams, operational management systems, and applications with advanced caching strategies designed to reduce database queries and improve user experience.",
+    "description": "Frontend Developer specialized in business applications and management systems. I have developed and commercialized solutions for sales, customer management, and business operations using React, Astro, TypeScript, Firebase, and performance-oriented scalable architectures. My experience includes CRM platforms for sales teams, operational management systems, and applications with advanced caching strategies designed to reduce database queries and improve user experience.",
     "available": "Available for work",
     "contact": "Contact me"
   },
