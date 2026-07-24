@@ -92,7 +92,7 @@
       "title": "React Fundamentals Lab",
       "description": "An ongoing React laboratory where I build small exercises and implementations to strengthen my understanding of React fundamentals, component behavior, state management, effects, hooks, rendering, and common frontend patterns.",
       "link": "",
-      "github": "",
+      "github": "https://github.com/ImYetiDev/react-fundamentals-lab",
       "images": [
         "/projects/react-lab/main.avif"
       ],
@@ -127,10 +127,9 @@
       ],
       "tags": [
         "ASTRO",
+        "NETLIFY",
         "REACT",
-        "TYPESCRIPT",
-        "TAILWIND",
-        "NETLIFY"
+        "TAILWIND"
       ],
       "detail": {
         "description": "A Netflix-inspired web application developed to practice building dynamic interfaces with Astro and React. The project consumes external movie data to generate content dynamically and implements reusable components, responsive layouts, movie categories, search functionality, and movie detail views.",
@@ -149,7 +148,7 @@
       "slug": "spotify-clone",
       "title": "Spotify Clone",
       "description": "A Spotify-inspired application developed as an early React learning project. It helped me practice API consumption, reusable components, state handling, responsive UI development, and the fundamentals of building and deploying a React application.",
-      "link": "",
+      "link": "https://clon-spotifi.netlify.app/",
       "github": "",
       "images": [
         "/projects/spotify-clone/main.avif",
@@ -159,9 +158,9 @@
         "/projects/spotify-clone/4.avif"
       ],
       "tags": [
+        "NETLIFY",
         "REACT",
-        "TAILWIND",
-        "NETLIFY"
+        "TAILWIND"
       ],
       "detail": {
         "description": "One of my early React projects, created as a practical exercise to understand how frontend applications interact with external APIs. The project helped me develop a stronger understanding of components, state, data fetching, interface composition, and application deployment.",
@@ -213,12 +212,12 @@
         "summary": "Developed a sales CRM focused on lead management, customer tracking, and sales opportunities. The platform manages the complete sales cycle from first contact to deal closure, including stage tracking, agent assignment, performance reporting, and operational metrics for commercial teams.",
         "role": "UI Design, Full Stack Development, QA, and Deployment.",
         "stack": [
-          "REACT",
-          "TYPESCRIPT",
-          "TAILWIND",
+          "ASTRO",
           "FIRESTORE_REST",
           "FIRESTORE_SDK",
-          "NETLIFY"
+          "NETLIFY",
+          "REACT",
+          "TAILWIND"
         ],
         "highlights": [
           "Data version control for efficient synchronization.",
@@ -254,12 +253,12 @@
         "summary": "Developed a platform focused on managing existing customers, enabling commercial follow-up, renewal tracking, interaction logging, and a complete view of each customer's commercial history.",
         "role": "UI Design, Full Stack Development, QA, and Deployment.",
         "stack": [
-          "REACT",
-          "TYPESCRIPT",
-          "TAILWIND",
+          "ASTRO",
           "FIRESTORE_REST",
           "FIRESTORE_SDK",
-          "NETLIFY"
+          "NETLIFY",
+          "REACT",
+          "TAILWIND"
         ],
         "highlights": [
           "Data version control for efficient synchronization.",
@@ -295,11 +294,11 @@
         "summary": "Management system designed to centralize daily salon operations, including service administration, sales tracking, cash register closing, operational expenses, and financial reporting from a single platform.",
         "role": "Frontend Development, Module Integration, QA, and Deployment.",
         "stack": [
-          "REACT",
-          "NETLIFY",
           "ASTRO",
-          "TAILWIND",
-          "FIREBASE"
+          "FIREBASE",
+          "NETLIFY",
+          "REACT",
+          "TAILWIND"
         ],
         "highlights": [
           "Management of services performed by stylists.",
@@ -329,8 +328,8 @@
         "summary": "Contributed to the development of Globant's internal People Events Platform as part of a development team. My work focused on frontend implementation using React, integrating interfaces with Firebase services, and developing features based on defined requirements and designs for the event management experience.",
         "role": "Frontend Developer.",
         "stack": [
-          "REACT",
-          "FIREBASE"
+          "FIREBASE",
+          "REACT"
         ],
         "highlights": [
           "Implemented frontend features in React following defined requirements, use cases, and designs.",
