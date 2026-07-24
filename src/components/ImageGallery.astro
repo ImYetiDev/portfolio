@@ -1,0 +1,202 @@
+---
+interface Props {
+  images: string[];
+  title: string;
+  closeLabel?: string;
+}
+
+const {
+  images = [],
+  title,
+  closeLabel = "Close image",
+} = Astro.props;
+---
+
+{
+  images.length > 0 && (
+    <>
+      <section
+        data-image-gallery
+        class:list={[
+          "grid gap-6",
+          images.length === 1
+            ? "grid-cols-1 max-w-5xl mx-auto"
+            : "md:grid-cols-2",
+        ]}
+      >
+        {images.map((image, index) => (
+          <button
+            type="button"
+            class="group relative block w-full overflow-hidden
+                   rounded-xl border border-gray-200
+                   bg-gray-100 shadow-md
+                   transition duration-300
+                   hover:-translate-y-1 hover:shadow-xl
+                   dark:border-gray-800 dark:bg-gray-900"
+            data-lightbox-trigger
+            data-image={image}
+            data-alt={`${title} - ${index + 1}`}
+            aria-label={`${title} - ${index + 1}`}
+          >
+            <img
+              src={image}
+              alt={`${title} - ${index + 1}`}
+              loading="lazy"
+              class="h-auto w-full object-contain
+                     transition duration-500
+                     group-hover:scale-[1.02]"
+            />
+          </button>
+        ))}
+      </section>
+
+      <div
+        data-lightbox
+        class="fixed inset-0 z-[100]
+               hidden items-center justify-center
+               bg-black/90 p-4
+               backdrop-blur-sm
+               sm:p-8"
+        role="dialog"
+        aria-modal="true"
+        aria-hidden="true"
+      >
+        <button
+          type="button"
+          data-lightbox-close
+          aria-label={closeLabel}
+          class="absolute right-5 top-5 z-20
+                 flex h-11 w-11 items-center justify-center
+                 rounded-full bg-black/60
+                 text-3xl text-white
+                 transition hover:bg-black"
+        >
+          ×
+        </button>
+
+        <img
+          data-lightbox-image
+          src=""
+          alt=""
+          class="max-h-[90vh] max-w-[95vw]
+                 rounded-xl object-contain
+                 shadow-2xl"
+        />
+      </div>
+    </>
+  )
+}
+
+<script>
+  function initializeImageGallery() {
+    const galleries = document.querySelectorAll<HTMLElement>(
+      "[data-image-gallery]"
+    );
+
+    galleries.forEach((gallery) => {
+      if (gallery.dataset.initialized === "true") {
+        return;
+      }
+
+      gallery.dataset.initialized = "true";
+
+      const lightbox = gallery.nextElementSibling as HTMLElement | null;
+
+      if (!lightbox?.hasAttribute("data-lightbox")) {
+        return;
+      }
+
+      const lightboxImage =
+        lightbox.querySelector<HTMLImageElement>(
+          "[data-lightbox-image]"
+        );
+
+      const closeButton =
+        lightbox.querySelector<HTMLButtonElement>(
+          "[data-lightbox-close]"
+        );
+
+      if (!lightboxImage) {
+        return;
+      }
+
+      const openLightbox = (
+        image: string,
+        alt: string
+      ) => {
+        lightboxImage.src = image;
+        lightboxImage.alt = alt;
+
+        lightbox.classList.remove("hidden");
+        lightbox.classList.add("flex");
+        lightbox.setAttribute("aria-hidden", "false");
+
+        document.body.style.overflow = "hidden";
+      };
+
+      const closeLightbox = () => {
+        lightbox.classList.remove("flex");
+        lightbox.classList.add("hidden");
+        lightbox.setAttribute("aria-hidden", "true");
+
+        lightboxImage.src = "";
+        lightboxImage.alt = "";
+
+        document.body.style.overflow = "";
+      };
+
+      gallery.addEventListener("click", (event) => {
+        const target = event.target as HTMLElement;
+
+        const trigger = target.closest<HTMLElement>(
+          "[data-lightbox-trigger]"
+        );
+
+        if (!trigger) {
+          return;
+        }
+
+        const image = trigger.dataset.image;
+        const alt = trigger.dataset.alt ?? "";
+
+        if (!image) {
+          return;
+        }
+
+        openLightbox(image, alt);
+      });
+
+      closeButton?.addEventListener(
+        "click",
+        closeLightbox
+      );
+
+      lightbox.addEventListener("click", (event) => {
+        if (event.target === lightbox) {
+          closeLightbox();
+        }
+      });
+
+      const handleKeydown = (event: KeyboardEvent) => {
+        if (
+          event.key === "Escape" &&
+          lightbox.getAttribute("aria-hidden") === "false"
+        ) {
+          closeLightbox();
+        }
+      };
+
+      document.addEventListener(
+        "keydown",
+        handleKeydown
+      );
+    });
+  }
+
+  initializeImageGallery();
+
+  document.addEventListener(
+    "astro:page-load",
+    initializeImageGallery
+  );
+</script>

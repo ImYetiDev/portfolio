@@ -4,6 +4,7 @@ import BackButton from "@/components/BackButton.astro";
 import LinkButton from "@/components/LinkButton.astro";
 import GitHub from "@/components/icons/GitHub.astro";
 import Link from "@/components/icons/Link.astro";
+import ImageGallery from "@/components/ImageGallery.astro";
 
 import { TAGS } from "@/data/tags";
 
@@ -12,69 +13,41 @@ import es from "../../language/es.json";
 
 const lang = Astro.cookies.get("lang")?.value || "en";
 
-const PROJECTS =
-  lang === "es"
-    ? es.PROJECTS
-    : en.PROJECTS;
+const PROJECTS = lang === "es" ? es.PROJECTS : en.PROJECTS;
 
 const { slug } = Astro.params;
 
-const project = PROJECTS.find(
-  (project) => project.slug === slug
-);
+const project = PROJECTS.find((project) => project.slug === slug);
 
 if (!project) {
   throw new Error(
-    lang === "es"
-      ? "Proyecto no encontrado"
-      : "Project not found"
+    lang === "es" ? "Proyecto no encontrado" : "Project not found",
   );
 }
 
 const labels = {
-  back:
-    lang === "es"
-      ? "Volver a proyectos"
-      : "Back to Projects",
+  back: lang === "es" ? "Volver a proyectos" : "Back to Projects",
 
-  about:
-    lang === "es"
-      ? "Sobre el proyecto"
-      : "About the project",
+  about: lang === "es" ? "Sobre el proyecto" : "About the project",
 
-  technologies:
-    lang === "es"
-      ? "Tecnologías"
-      : "Technologies",
+  technologies: lang === "es" ? "Tecnologías" : "Technologies",
 
   highlights:
-    lang === "es"
-      ? "Características y aprendizajes"
-      : "Features & Learnings",
+    lang === "es" ? "Características y aprendizajes" : "Features & Learnings",
 
-  code:
-    lang === "es"
-      ? "Ver código"
-      : "View Code",
+  code: lang === "es" ? "Ver código" : "View Code",
 
-  demo:
-    lang === "es"
-      ? "Ver demo"
-      : "View Demo",
+  demo: lang === "es" ? "Ver demo" : "View Demo",
+
+  close: lang === "es" ? "Cerrar imagen" : "Close image",
 };
 ---
 
-<Layout
-  title={project.title}
-  description={project.description}
->
-  <main class="px-4 py-20 max-w-5xl mx-auto space-y-12">
-    <BackButton
-      href="/projects"
-      label={labels.back}
-    />
+<Layout title={project.title} description={project.description}>
+  <main class="px-4 py-20 max-w-7xl mx-auto space-y-12">
+    <BackButton href="/projects" label={labels.back} />
 
-    <header class="space-y-4">
+    <header class="space-y-5">
       <h1
         class="text-4xl font-bold text-center
                text-gray-900 dark:text-gray-100"
@@ -88,33 +61,35 @@ const labels = {
       >
         {project.description}
       </p>
+
+      {
+        (project.github || project.link) && (
+          <div class="flex flex-wrap justify-center gap-4 pt-2">
+            {project.github && (
+              <LinkButton href={project.github}>
+                <GitHub class="size-5" />
+                {labels.code}
+              </LinkButton>
+            )}
+
+            {project.link && (
+              <LinkButton href={project.link}>
+                <Link class="size-4" />
+                {labels.demo}
+              </LinkButton>
+            )}
+          </div>
+        )
+      }
     </header>
 
-    {
-      project.images.length > 0 && (
-        <section
-          class:list={[
-            "grid gap-4",
-            project.images.length === 1
-              ? "grid-cols-1"
-              : "sm:grid-cols-2",
-          ]}
-        >
-          {project.images.map((image, index) => (
-            <img
-              src={image}
-              alt={`${project.title} - ${index + 1}`}
-              loading="lazy"
-              class="w-full rounded-xl object-cover
-                     border border-gray-200
-                     dark:border-gray-800"
-            />
-          ))}
-        </section>
-      )
-    }
+    <ImageGallery
+      images={project.images}
+      title={project.title}
+      closeLabel={lang === "es" ? "Cerrar imagen" : "Close image"}
+    />
 
-    <section class="space-y-4">
+    <section class="mx-auto max-w-5xl space-y-4">
       <h2
         class="text-2xl font-bold
                text-gray-900 dark:text-gray-100"
@@ -130,7 +105,7 @@ const labels = {
       </p>
     </section>
 
-    <section class="space-y-4">
+    <section class="mx-auto max-w-5xl space-y-4">
       <h2
         class="text-2xl font-bold
                text-gray-900 dark:text-gray-100"
@@ -141,8 +116,7 @@ const labels = {
       <div class="flex flex-wrap gap-3">
         {
           project.tags.map((key) => {
-            const tag =
-              TAGS[key as keyof typeof TAGS];
+            const tag = TAGS[key as keyof typeof TAGS];
 
             if (!tag) return null;
 
@@ -163,7 +137,7 @@ const labels = {
 
     {
       project.detail.highlights.length > 0 && (
-        <section class="space-y-4">
+        <section class="mx-auto max-w-5xl space-y-4">
           <h2
             class="text-2xl font-bold
                    text-gray-900 dark:text-gray-100"
@@ -182,25 +156,39 @@ const labels = {
         </section>
       )
     }
-
-    {
-      (project.github || project.link) && (
-        <footer class="flex flex-wrap gap-4 pt-4">
-          {project.github && (
-            <LinkButton href={project.github}>
-              <GitHub class="size-5" />
-              {labels.code}
-            </LinkButton>
-          )}
-
-          {project.link && (
-            <LinkButton href={project.link}>
-              <Link class="size-4" />
-              {labels.demo}
-            </LinkButton>
-          )}
-        </footer>
-      )
-    }
   </main>
+
+  <div
+    id="image-lightbox"
+    class="fixed inset-0 z-[100]
+           hidden items-center justify-center
+           bg-black/90 p-4
+           backdrop-blur-sm
+           sm:p-8"
+    role="dialog"
+    aria-modal="true"
+    aria-hidden="true"
+  >
+    <button
+      id="lightbox-close"
+      type="button"
+      aria-label={labels.close}
+      class="absolute right-5 top-5 z-20
+             flex h-11 w-11 items-center justify-center
+             rounded-full bg-black/60
+             text-3xl text-white
+             transition hover:bg-black"
+    >
+      ×
+    </button>
+
+    <img
+      id="lightbox-image"
+      src=""
+      alt=""
+      class="max-h-[90vh] max-w-[95vw]
+             object-contain
+             rounded-xl shadow-2xl"
+    />
+  </div>
 </Layout>
