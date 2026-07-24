@@ -93,7 +93,7 @@
       "link": "",
       "github": "",
       "images": [
-        "/projects/react-fundamentals/react-fundamentals.avif"
+        "/projects/react-lab/main.avif"
       ],
       "tags": [
         "REACT",
@@ -107,7 +107,11 @@
       "link": "https://netflux-clon.netlify.app/",
       "github": "https://github.com/ImYetiDev/clon-netflix",
       "images": [
-        "/netflix.avif"
+        "/projects/react-lab/main.avif",
+        "/projects/react-lab/posters.avif",
+        "/projects/react-lab/trailer.avif",
+        "/projects/react-lab/slide.avif",
+        "/projects/react-lab/descripcion.avif"
       ],
       "tags": [
         "ASTRO",
@@ -123,7 +127,11 @@
       "link": "",
       "github": "",
       "images": [
-        "/projects/spotify/spotify.avif"
+        "/projects/spotify-clone/main.avif",
+        "/projects/spotify-clone/2.avif",
+        "/projects/spotify-clone/3.avif",
+        "/projects/spotify-clone/home.avif",
+        "/projects/spotify-clone/4.avif"
       ],
       "tags": [
         "REACT",
@@ -159,11 +167,10 @@
       "codeUrl": "",
       "codeLabel": "",
       "link": "",
-      "image": "/projects/sold-products/crm/cargaMasivaCompleta.avif",
       "images": [
-        "/projects/sold-products/crm/editarCliente.avif",
+        "/projects/sold-products/crm/cargaMasivaCompleta.avif",
         "/projects/sold-products/crm/cargaMasiva.avif",
-        "/projects/sold-products/crm/buscador.avif",
+        "/projects/sold-products/crm/editarCliente.avif",
         "/projects/sold-products/crm/adminClientes.avif"
       ],
       "detail": {
@@ -200,11 +207,11 @@
       "codeUrl": "",
       "codeLabel": "",
       "link": "",
-      "image": "/projects/sold-products/crm/cargaMasiva.avif",
       "images": [
         "/projects/sold-products/crm/editarCliente.avif",
         "/projects/sold-products/crm/cargaMasiva.avif",
-        "/projects/sold-products/crm/buscador.avif",
+        "/projects/sold-products/crm/login.avif",
+        "/projects/sold-products/crm/cargaMasivaCompleta.avif",
         "/projects/sold-products/crm/adminClientes.avif"
       ],
       "detail": {
@@ -280,7 +287,7 @@
       "codeLabel": "",
       "link": "https://people-events-platform.web.app/",
       "images": [
-        "/pep.avif"
+        "/projects/sold-products/pep/pep.avif"
       ],
       "detail": {
         "summary": "Contributed to the development of Globant's internal People Events Platform as part of a development team. My work focused on frontend implementation using React, integrating interfaces with Firebase services, and developing features based on defined requirements and designs for the event management experience.",
