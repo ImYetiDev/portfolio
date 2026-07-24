@@ -88,30 +88,42 @@
   ],
   "PROJECTS": [
     {
+      "slug": "react-fundamentals-lab",
       "title": "React Fundamentals Lab",
-      "description": "Laboratorio activo de React donde desarrollo pequeños ejercicios e implementaciones para fortalecer mi comprensión de los fundamentos de React, comportamiento de componentes, manejo de estado, efectos, hooks, renderizado y patrones comunes de frontend.",
+      "description": "Laboratorio activo de React donde desarrollo pequeños ejercicios e implementaciones para fortalecer mi comprensión de los fundamentos de React, el comportamiento de los componentes, manejo de estado, efectos, hooks, renderizado y patrones comunes de frontend.",
       "link": "",
-      "github": "https://github.com/ImYetiDev/react-fundamentals-lab",
+      "github": "",
       "images": [
         "/projects/react-lab/main.avif"
       ],
       "tags": [
         "REACT",
-        "TYPESCRIPT",
-        "TAILWIND"
-      ]
+        "TYPESCRIPT"
+      ],
+      "detail": {
+        "description": "Este proyecto funciona como un laboratorio práctico para estudiar React en profundidad. En lugar de enfocarme en una única aplicación, lo utilizo para desarrollar ejercicios aislados y pequeñas implementaciones que me permiten comprender cómo se comporta React internamente y cómo interactúan sus conceptos principales.",
+        "highlights": [
+          "Práctica con composición de componentes y patrones de interfaz reutilizables.",
+          "Ejercicios enfocados en manejo de estado y re-renderizado de componentes.",
+          "Experimentos con useEffect, arrays de dependencias y funciones de limpieza.",
+          "Práctica con custom hooks y separación de responsabilidades.",
+          "Estudio del manejo de eventos, props, estado y ciclo de vida de los componentes.",
+          "Implementación de patrones comunes de React mediante ejercicios prácticos."
+        ]
+      }
     },
     {
+      "slug": "netflix-clone",
       "title": "Netflix Clone",
       "description": "Aplicación inspirada en Netflix desarrollada para practicar desarrollo frontend moderno, interfaces responsivas, componentes reutilizables y consumo dinámico de información de películas mediante una API externa.",
       "link": "https://netflux-clon.netlify.app/",
       "github": "https://github.com/ImYetiDev/clon-netflix",
       "images": [
-        "/projects/react-lab/main.avif",
-        "/projects/react-lab/posters.avif",
-        "/projects/react-lab/trailer.avif",
-        "/projects/react-lab/slide.avif",
-        "/projects/react-lab/descripcion.avif"
+        "/projects/netflix-clone/main.avif",
+        "/projects/netflix-clone/posters.avif",
+        "/projects/netflix-clone/trailer.avif",
+        "/projects/netflix-clone/slide.avif",
+        "/projects/netflix-clone/descripcion.avif"
       ],
       "tags": [
         "ASTRO",
@@ -119,13 +131,26 @@
         "TYPESCRIPT",
         "TAILWIND",
         "NETLIFY"
-      ]
+      ],
+      "detail": {
+        "description": "Aplicación web inspirada en Netflix desarrollada para practicar la construcción de interfaces dinámicas con Astro y React. El proyecto consume información de películas desde una API externa para generar contenido dinámicamente e implementa componentes reutilizables, diseños responsivos, categorías de películas, funcionalidad de búsqueda y vistas detalladas de cada película.",
+        "highlights": [
+          "Consumo dinámico de información de películas desde una API externa.",
+          "Componentes reutilizables para tarjetas de películas, sliders y secciones de contenido.",
+          "Interfaz responsiva inspirada en Netflix.",
+          "Páginas dinámicas con información detallada de cada película.",
+          "Funcionalidad de búsqueda de películas.",
+          "Organización del contenido por categorías.",
+          "Soporte para interfaz bilingüe."
+        ]
+      }
     },
     {
+      "slug": "spotify-clone",
       "title": "Spotify Clone",
       "description": "Aplicación inspirada en Spotify desarrollada como uno de mis primeros proyectos de aprendizaje con React. Me permitió practicar el consumo de APIs, componentes reutilizables, manejo de estado, desarrollo de interfaces responsivas y los fundamentos para construir y desplegar una aplicación con React.",
-      "link": "https://clon-spotifi.netlify.app/",
-      "github": "https://github.com/ImYetiDev/clon-spotify",
+      "link": "",
+      "github": "",
       "images": [
         "/projects/spotify-clone/main.avif",
         "/projects/spotify-clone/2.avif",
@@ -137,7 +162,18 @@
         "REACT",
         "TAILWIND",
         "NETLIFY"
-      ]
+      ],
+      "detail": {
+        "description": "Uno de mis primeros proyectos desarrollados con React, creado como ejercicio práctico para comprender cómo las aplicaciones frontend interactúan con APIs externas. El proyecto me permitió desarrollar una mejor comprensión de componentes, estado, obtención de datos, composición de interfaces y despliegue de aplicaciones.",
+        "highlights": [
+          "Primeras experiencias prácticas consumiendo APIs externas con React.",
+          "Desarrollo de componentes reutilizables con React.",
+          "Práctica con manejo de estado y datos dinámicos.",
+          "Interfaz responsiva inspirada en Spotify.",
+          "Organización de la interfaz mediante una arquitectura basada en componentes.",
+          "Despliegue de una aplicación React en un entorno de producción."
+        ]
+      }
     }
   ],
   "SOLD_PRODUCTS_LABELS": {
@@ -288,7 +324,7 @@
       "codeLabel": "",
       "link": "https://people-events-platform.web.app/",
       "images": [
-          "/projects/sold-products/pep/pep.avif"
+        "/projects/sold-products/pep/pep.avif"
       ],
       "detail": {
         "summary": "Contribuí al desarrollo de la plataforma interna People Events Platform de Globant como parte de un equipo de desarrollo. Mi trabajo se enfocó en la implementación frontend utilizando React, la integración de interfaces con servicios de Firebase y el desarrollo de funcionalidades basadas en requerimientos y diseños definidos para la experiencia de gestión de eventos.",

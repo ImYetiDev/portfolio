@@ -88,6 +88,7 @@
   ],
   "PROJECTS": [
     {
+      "slug": "react-fundamentals-lab",
       "title": "React Fundamentals Lab",
       "description": "An ongoing React laboratory where I build small exercises and implementations to strengthen my understanding of React fundamentals, component behavior, state management, effects, hooks, rendering, and common frontend patterns.",
       "link": "",
@@ -97,21 +98,32 @@
       ],
       "tags": [
         "REACT",
-        "TYPESCRIPT",
-        "TAILWIND"
-      ]
+        "TYPESCRIPT"
+      ],
+      "detail": {
+        "description": "This project serves as a practical laboratory for studying React in depth. Instead of focusing on a single application, I use it to build isolated exercises and small implementations that help me understand how React behaves internally and how its core concepts work together.",
+        "highlights": [
+          "Practice with component composition and reusable UI patterns.",
+          "Exercises focused on state management and component re-rendering.",
+          "Experiments with useEffect, dependency arrays, and cleanup functions.",
+          "Practice with custom hooks and separation of responsibilities.",
+          "Study of event handling, props, state, and component lifecycle behavior.",
+          "Implementation of common React patterns through practical exercises."
+        ]
+      }
     },
     {
+      "slug": "netflix-clone",
       "title": "Netflix Clone",
       "description": "A Netflix-inspired application built to practice modern frontend development, responsive interfaces, reusable components, and dynamic movie data consumption through an external API.",
       "link": "https://netflux-clon.netlify.app/",
       "github": "https://github.com/ImYetiDev/clon-netflix",
       "images": [
-        "/projects/react-lab/main.avif",
-        "/projects/react-lab/posters.avif",
-        "/projects/react-lab/trailer.avif",
-        "/projects/react-lab/slide.avif",
-        "/projects/react-lab/descripcion.avif"
+        "/projects/netflix-clone/main.avif",
+        "/projects/netflix-clone/posters.avif",
+        "/projects/netflix-clone/trailer.avif",
+        "/projects/netflix-clone/slide.avif",
+        "/projects/netflix-clone/descripcion.avif"
       ],
       "tags": [
         "ASTRO",
@@ -119,9 +131,22 @@
         "TYPESCRIPT",
         "TAILWIND",
         "NETLIFY"
-      ]
+      ],
+      "detail": {
+        "description": "A Netflix-inspired web application developed to practice building dynamic interfaces with Astro and React. The project consumes external movie data to generate content dynamically and implements reusable components, responsive layouts, movie categories, search functionality, and movie detail views.",
+        "highlights": [
+          "Dynamic movie data consumption from an external API.",
+          "Reusable components for movie cards, sliders, and content sections.",
+          "Responsive interface inspired by Netflix.",
+          "Dynamic movie detail pages.",
+          "Movie search functionality.",
+          "Content organization by categories.",
+          "Bilingual interface support."
+        ]
+      }
     },
     {
+      "slug": "spotify-clone",
       "title": "Spotify Clone",
       "description": "A Spotify-inspired application developed as an early React learning project. It helped me practice API consumption, reusable components, state handling, responsive UI development, and the fundamentals of building and deploying a React application.",
       "link": "",
@@ -137,7 +162,18 @@
         "REACT",
         "TAILWIND",
         "NETLIFY"
-      ]
+      ],
+      "detail": {
+        "description": "One of my early React projects, created as a practical exercise to understand how frontend applications interact with external APIs. The project helped me develop a stronger understanding of components, state, data fetching, interface composition, and application deployment.",
+        "highlights": [
+          "First practical experiences consuming external APIs with React.",
+          "Development of reusable React components.",
+          "Practice with state management and dynamic data.",
+          "Responsive interface inspired by Spotify.",
+          "Component-based interface organization.",
+          "Deployment of a React application to a production environment."
+        ]
+      }
     }
   ],
   "SOLD_PRODUCTS_LABELS": {
