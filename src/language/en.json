@@ -149,7 +149,7 @@
       "title": "Spotify Clone",
       "description": "A Spotify-inspired application developed as an early React learning project. It helped me practice API consumption, reusable components, state handling, responsive UI development, and the fundamentals of building and deploying a React application.",
       "link": "https://clon-spotifi.netlify.app/",
-      "github": "",
+      "github": "https://github.com/ImYetiDev/clon-spotify",
       "images": [
         "/projects/spotify-clone/main.avif",
         "/projects/spotify-clone/2.avif",
