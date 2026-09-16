@@ -88,31 +88,6 @@
   ],
   "PROJECTS": [
     {
-      "slug": "react-fundamentals-lab",
-      "title": "React Fundamentals Lab",
-      "description": "An ongoing React laboratory where I build small exercises and implementations to strengthen my understanding of React fundamentals, component behavior, state management, effects, hooks, rendering, and common frontend patterns.",
-      "link": "",
-      "github": "https://github.com/ImYetiDev/react-fundamentals-lab",
-      "images": [
-        "/projects/react-lab/main.avif"
-      ],
-      "tags": [
-        "REACT",
-        "TYPESCRIPT"
-      ],
-      "detail": {
-        "description": "This project serves as a practical laboratory for studying React in depth. Instead of focusing on a single application, I use it to build isolated exercises and small implementations that help me understand how React behaves internally and how its core concepts work together.",
-        "highlights": [
-          "Practice with component composition and reusable UI patterns.",
-          "Exercises focused on state management and component re-rendering.",
-          "Experiments with useEffect, dependency arrays, and cleanup functions.",
-          "Practice with custom hooks and separation of responsibilities.",
-          "Study of event handling, props, state, and component lifecycle behavior.",
-          "Implementation of common React patterns through practical exercises."
-        ]
-      }
-    },
-    {
       "slug": "netflix-clone",
       "title": "Netflix Clone",
       "description": "A Netflix-inspired application built to practice modern frontend development, responsive interfaces, reusable components, and dynamic movie data consumption through an external API.",
